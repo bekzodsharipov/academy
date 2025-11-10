@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IAAOC</title>
+    <link rel="icon" href="./img/logoHead.avif">
+    <!-- <link rel="stylesheet" href="./css/main.css" media="print" onload="this.media='all'" />
+    <noscript>
+        <link rel="stylesheet" href="./css/main.css" />
+    </noscript> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/modal.css">
+</head>
+
+<body>
+
+    <div id="thankYouModal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Rahmat!</h2>
+                <button class="close-btn" onclick="closeThankYouModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="success-icon">✓</div>
+                <p>Ma'lumotlaringiz muvaffaqiyatli yuborildi.</p>
+                <p>Tez orada siz bilan bog'lanamiz.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="ok-btn" onclick="closeThankYouModal()">OK</button>
+            </div>
+        </div>
+    </div>
+    <!-- modal  -->
+    <div class="modal__overlay"></div>
+    <div class="padding">
+        <div class="modal__sign">
+            <div class="modal__sign-content">
+                <img src="./img/modal_logo.avif" alt="logo" width="163" height="50" loading="lazy"
+                    class="modal__sign-logo">
+                <h2 class="modal__sign-title">Buxgalteriya autsorsing kompaniyalari uchun hamjamiyat</h2>
+                <img src="./img/modal-banner.avif" alt="banner" loading="lazy" class="modal__sign-banner">
+            </div>
+            <div class="modal__sign-form-block">
+                <div class="modal__sign-form-header">
+                    <p class="modal__sign-form-title">Ro’yxatdan o’tish</p>
+                    <button class="modal__sign-close-btn modal__close">
+                        <img src="./img/x.svg" width="24" height="24" loading="lazy" alt="x"
+                            class="modal__sign-close-icon">
+                    </button>
+                </div>
+                <div class="modal__infos">
+                    <h3 class="modal__title">Siz bilan to’liq tanishishimiz uchun quyidagi tugmani bosib Google Formani
+                        to’lidiring </h3>
+                    <img class="modal__img" src="./img/arrow.svg" loading="lazy" width="47" height="18"
+                        alt="arrow icon">
+                        <a class="modal__btn" href="./personal.html">
+                            Formani to’lidirish
+                        </a>
+                </div>
+
+                <div class="success-message hidden" id="successMessage">
+                    <h2>Muvaffaqiyatli!</h2>
+                    <p>Ma'lumotlaringiz muvaffaqiyatli yuborildi. Tez orada siz bilan bog'lanamiz!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal  -->
+
+    <header class="header">
+        <div class="header__container">
+            <div class="header__logo">
+                <a href="./index.html" class="header__logo-link">
+                    <img src="./img/logo.avif" alt="logo" width="181" height="63" loading="lazy"
+                        class="header__logo-img">
+                    <span class="header__logo-text">Tajribalarni birlashtirib <br>
+                        - Ishonchni oshiramiz</span>
+                </a>
+            </div>
+            <ul class="header__nav">
+                <li class="header__nav-item"><a href="#goal" class="header__nav-link">Assotsiatsiya haqida</a></li>
+                <li class="header__nav-item"><a href="#management" class="header__nav-link">Ta’sischilar</a></li>
+                <li class="header__nav-item"><a href="#benefits" class="header__nav-link">Hujjatlar</a></li>
+                <li class="header__nav-item"><a href="#news" class="header__nav-link">Shartlar</a></li>
+                <li class="header__nav-item"><a href="#news" class="header__nav-link">Yangiliklar</a></li>
+            </ul>
+            <div class="header__actions">
+                <button class="header__lang-btn">
+                    <img src="./img/world.svg" alt="world" class="header__lang-icon" width="20" height="20"
+                        loading="lazy">
+                    <p class="header__lang-text">O'zbekcha</p>
+                    <img src="./img/chevron-down.svg" alt="arrow" class="header__lang-arrow" width="20" height="20"
+                        loading="lazy">
+                    <ul class="header__lang-menu">
+                        <li class="header__lang-item">Русский</li>
+                        <li class="header__lang-item">English</li>
+                    </ul>
+                </button>
+                <button class="header__join-btn custom__btn open__modal">Shaxsiy kabinetga kirish</button>
+                <button class="hamburger__open-btn" id="hamburgerOpen">
+                    <svg width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1.45703H17M1 7.45703H17M1 13.457H17" stroke="black" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="hamburger__overlay" id="hamburgerOverlay">
+        <div class="hamburger__menu" id="hamburgerMenu">
+            <div class="hamburger__header">
+                <div class="hamburger__logo">
+                    <img src="./img/logo.avif" alt="logo" width="120" height="42" loading="lazy">
+                </div>
+                <button class="hamburger__close-btn" id="hamburgerClose">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+
+            <nav class="hamburger__nav">
+                <ul class="hamburger__nav-list">
+                    <li class="hamburger__nav-item">
+                        <a href="#goal" class="hamburger__nav-link">Assotsiatsiya haqida</a>
+                    </li>
+
+                    <li class="hamburger__nav-item">
+                        <a href="#management" class="hamburger__nav-link">Kengash</a>
+                    </li>
+                    <li class="hamburger__nav-item">
+                        <a href="#benefits" class="hamburger__nav-link">Azo’lar va Imtiyozlar</a>
+                    </li>
+                    <li class="hamburger__nav-item">
+                        <a href="#news" class="hamburger__nav-link">Yangiliklar</a>
+                    </li>
+
+                </ul>
+            </nav>
+
+            <div class="hamburger__actions">
+                <div class="hamburger__lang-selector">
+                    <button class="hamburger__lang-btn">
+                        <img src="./img/world.svg" alt="world" width="20" height="20">
+                        <span>O'zbekcha</span>
+                        <img src="./img/chevron-down.svg" alt="arrow" width="16" height="16">
+                        <ul class="hamburger__lang-menu">
+                            <li class="hamburger__lang-item">Русский</li>
+                            <li class="hamburger__lang-item">English</li>
+                        </ul>
+                    </button>
+                </div>
+                <a href="#app" class="hamburger__join-btn">A'zo bo'lish</a>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="personal">
+        <div class="personal__container">
+            <h2 class="personal__title">Zafar Hoshimov</h2>
+            <h3 class="personal__subtitle">Shaxsiy kabinetga xush kelibsiz!</h3>
+            <p class="personal__description">Bu bo’lim faqat uyushma a’zolari uchun maxsus tayyorlangan. Bu bo’limdagi
+                ma’lumotlarni ulashish qat’iyan
+                man qilinadi. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </section>
+
+
+    <section class="list">
+        <div class="list__container">
+            <h2 class="list__title">Qora ro’yxat</h2>
+            <p class="list__description">Sohamizdagi firibgar insonlar, kompaniya va agentliklar</p>
+
+            <div class="list__box">
+                <div class="list__col accordion-header">
+                    <h3 class="list__col-title">Ishonchsiz xodimlar</h3>
+                    <img class="arrow-icon" src="./img/personal-arrow.svg" loading="lazy" alt="personal arrow">
+                </div>
+
+                <div class="accordion-content">
+                    <table>
+                        <tr>
+                            <th>F.I.SH</th>
+                            <th>Sababi</th>
+                        </tr>
+
+                        <tr>
+                            <td class="cell-with-image">
+                                Ergashev Otabek Zafar o’g’li
+                            </td>
+                            <td>Deadline ga amal qilmaydi. Topshirilgan vazifalar doimiy kechikadi</td>
+                        </tr>
+
+                        <tr class="wwww">
+                            <td class="cell-with-image">
+                                Ergashev Otabek Zafar o’g’li
+                            </td>
+                            <td>Deadline ga amal qilmaydi. Topshirilgan vazifalar doimiy kechikadi</td>
+                        </tr>
+
+                        <tr>
+                            <td class="cell-with-image">
+                                Ergashev Otabek Zafar o’g’li
+                            </td>
+                            <td>Deadline ga amal qilmaydi. Topshirilgan vazifalar doimiy kechikadi</td>
+                        </tr>
+
+                        <tr class="wwww">
+                            <td class="cell-with-image wwww" colspan="2">
+                                Ergashev Otabek Zafar o’g’li
+                            </td>
+                            <td>
+                                Deadline ga amal qilmaydi. Topshirilgan vazifalar doimiy kechikadi. Deadline ga amal <br>
+                                qilmaydi. Topshirilgan vazifalar doimiy kechikadi. Deadline ga amal qilmaydi. <br>
+                                Topshirilgan vazifalar doimiy kechikadi
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="cell-with-image">
+                                Ergashev Otabek Zafar o’g’li
+                            </td>
+                            <td>Deadline ga amal qilmaydi. Topshirilgan vazifalar doimiy kechikadi</td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+            <div class="list__box">
+                <div class="list__col accordion-header">
+                    <h3 class="list__col-title">Firibgar kompaniyalar</h3>
+                    <img class="arrow-icon" src="./img/personal-arrow.svg" loading="lazy" alt="personal arrow">
+                </div>
+
+                <div class="accordion-content">
+                    <table>
+                        <tr>
+                            <th>F.I.SH</th>
+                            <th>Sababi</th>
+                        </tr>
+
+                        <tr>
+                            <td class="cell-with-image">
+                                Ergashev Otabek Zafar o’g’li
+                            </td>
+                            <td>Deadline ga amal qilmaydi. Topshirilgan vazifalar doimiy kechikadi</td>
+                        </tr>
+
+                        <tr class="wwww">
+                            <td class="cell-with-image">
+                                Ergashev Otabek Zafar o’g’li
+                            </td>
+                            <td>Deadline ga amal qilmaydi. Topshirilgan vazifalar doimiy kechikadi</td>
+                        </tr>
+
+                        <tr>
+                            <td class="cell-with-image">
+                                Ergashev Otabek Zafar o’g’li
+                            </td>
+                            <td>Deadline ga amal qilmaydi. Topshirilgan vazifalar doimiy kechikadi</td>
+                        </tr>
+
+                        <tr class="wwww">
+                            <td class="cell-with-image wwww" colspan="2">
+                                Ergashev Otabek Zafar o’g’li
+                            </td>
+                            <td>
+                                Deadline ga amal qilmaydi. Topshirilgan vazifalar doimiy kechikadi. Deadline ga amal <br>
+                                qilmaydi. Topshirilgan vazifalar doimiy kechikadi. Deadline ga amal qilmaydi. <br>
+                                Topshirilgan vazifalar doimiy kechikadi
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="cell-with-image">
+                                Ergashev Otabek Zafar o’g’li
+                            </td>
+                            <td>Deadline ga amal qilmaydi. Topshirilgan vazifalar doimiy kechikadi</td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+            <div class="list__box">
+                <div class="list__col accordion-header">
+                    <h3 class="list__col-title">Ishonchsiz Agentliklar </h3>
+                    <img class="arrow-icon" src="./img/personal-arrow.svg" loading="lazy" alt="personal arrow">
+                </div>
+
+                <div class="accordion-content">
+                    <table>
+                        <tr>
+                            <th>F.I.SH</th>
+                            <th>Sababi</th>
+                        </tr>
+
+                        <tr>
+                            <td class="cell-with-image">
+                                Ergashev Otabek Zafar o’g’li
+                            </td>
+                            <td>Deadline ga amal qilmaydi. Topshirilgan vazifalar doimiy kechikadi</td>
+                        </tr>
+
+                        <tr class="wwww">
+                            <td class="cell-with-image">
+                                Ergashev Otabek Zafar o’g’li
+                            </td>
+                            <td>Deadline ga amal qilmaydi. Topshirilgan vazifalar doimiy kechikadi</td>
+                        </tr>
+
+                        <tr>
+                            <td class="cell-with-image">
+                                Ergashev Otabek Zafar o’g’li
+                            </td>
+                            <td>Deadline ga amal qilmaydi. Topshirilgan vazifalar doimiy kechikadi</td>
+                        </tr>
+
+                        <tr class="wwww">
+                            <td class="cell-with-image wwww" colspan="2">
+                                Ergashev Otabek Zafar o’g’li
+                            </td>
+                            <td>
+                                Deadline ga amal qilmaydi. Topshirilgan vazifalar doimiy kechikadi. Deadline ga amal <br>
+                                qilmaydi. Topshirilgan vazifalar doimiy kechikadi. Deadline ga amal qilmaydi. <br>
+                                Topshirilgan vazifalar doimiy kechikadi
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="cell-with-image">
+                                Ergashev Otabek Zafar o’g’li
+                            </td>
+                            <td>Deadline ga amal qilmaydi. Topshirilgan vazifalar doimiy kechikadi</td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="bottom-form">
+        <div class="bottom-form__container">
+            <h2 class="bottom-form__title">Biror bir savolingiz bormi</h2>
+            <p class="bottom-form__description">Savollaringiz bo’lsa hoziroq bizga yozib qoldiring biz sizga aloqaga
+                chiqamiz</p>
+            <form class="bottom-form__form" id="questionForm">
+                <div class="bottom-form__input-group">
+                    <div class="bottom-form__input-wrapper">
+                        <label class="bottom-form__label" for="nameQues">Ismingiz</label>
+                        <input class="bottom-form__input" type="text" required autocomplete="name" id="nameQues"
+                            name="name" placeholder="Iltimos ismingizni kiriting">
+                    </div>
+                    <div class="bottom-form__input-wrapper">
+                        <label class="bottom-form__label" for="telQues">Telefon raqam</label>
+                        <input class="bottom-form__input" type="tel" required autocomplete="tel" name="tel" id="telQues"
+                            placeholder="+998 000-00-00">
+                    </div>
+                </div>
+                <div class="bottom-form__textarea-wrapper">
+                    <label class="bottom-form__label" for="messageQues">Qo'shimcha savollar</label>
+                    <textarea class="bottom-form__textarea" name="message" id="messageQues"
+                        placeholder="Qo'shimca savollaringizni kiriting......."></textarea>
+                </div>
+                <div class="success-message-ques" id="successMessageQues">
+                    ✅ Ariza muvaffaqiyatli yuborildi! Tez orada siz bilan bog'lanamiz.
+                </div>
+                <div class="bottom-form__actions">
+                    <div class="bottom-form__checkbox-wrapper">
+                        <div style="width: 24px; height: 24px;">
+                            <input class="bottom-form__checkbox" id="checkQues" type="checkbox" required>
+                        </div>
+                        <label class="bottom-form__labelCheck" for="checkQues">Offerta shartlariga roziman</label>
+                    </div>
+                    <button class="bottom-form__button" type="submit" id="submitBtnQues">
+                        <span id="btnTextQues">Yuborish</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__brand">
+                <a class="footer__logo-link" href="#">
+                    <img class="footer__logo" src="./img/footlogo.avif" alt="logo" width="163" height="50"
+                        loading="lazy">
+                </a>
+                <ul class="footer__social-list">
+                    <li class="footer__social-item">
+                        <a class="footer__social-link" target="_blank" href="#">
+                            <img class="footer__social-icon" src="./img/footer/telegram.svg" alt="social media icon"
+                                width="32" height="32" loading="lazy">
+                        </a>
+                    </li>
+                    <li class="footer__social-item">
+                        <a class="footer__social-link" target="_blank" href="#">
+                            <img class="footer__social-icon" src="./img/footer/instagram.svg" alt="social media icon"
+                                width="32" height="32" loading="lazy">
+                        </a>
+                    </li>
+                    <li class="footer__social-item">
+                        <a class="footer__social-link" target="_blank" href="#">
+                            <img class="footer__social-icon" src="./img/footer/youtube.svg" alt="social media icon"
+                                width="32" height="32" loading="lazy">
+                        </a>
+                    </li>
+                    <li class="footer__social-item">
+                        <a class="footer__social-link" target="_blank" href="#">
+                            <img class="footer__social-icon" src="./img/footer/facebook.svg" alt="social media icon"
+                                width="32" height="32" loading="lazy">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__content">
+                <div class="footer__links">
+                    <ul class="footer__links-list">
+                        <li class="footer__links-item"><a class="footer__link" href="#goal">Assotsiatsiya haqida</a>
+                        </li>
+                        <li class="footer__links-item"><a class="footer__link" href="#management">Kengash</a></li>
+                        <li class="footer__links-item"><a class="footer__link" href="#benefits">Azo’lar va
+                                Imtiyozlar</a></li>
+                        <li class="footer__links-item"><a class="footer__link" href="#news">Yangiliklar</a></li>
+                    </ul>
+
+                    <p class="footer__description">Buxgalteriya autsorsing kompaniyalarini bir joyga to‘plab,
+                        professional va ishonchli tizim yaratadigan uyushma.</p>
+                </div>
+                <div class="footer__contact">
+                    <ul class="footer__contact-list">
+                        <li class="footer__contact-item">
+                            <a class="footer__contact-link" href="https://yandex.uz/maps/-/CLQ2nDO3">
+                                <span class="footer__contact-icon">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <ellipse cx="10" cy="9.16699" rx="2.5" ry="2.5" stroke="currentColor"
+                                            stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M14.7141 13.8806L11.1783 17.4164C10.5275 18.0665 9.47316 18.0665 8.82242 17.4164L5.28575 13.8806C2.68236 11.2771 2.68243 7.05602 5.28591 4.45258C7.8894 1.84914 12.1104 1.84914 14.7139 4.45258C17.3174 7.05602 17.3175 11.2771 14.7141 13.8806V13.8806Z"
+                                            stroke="currentColor" stroke-width="1.25" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </span>
+                                Toshkent shahri Chilonzor tumani “ц” kvartal 7/1 
+                            </a>
+                        </li>
+                        <li class="footer__contact-item">
+                            <a class="footer__contact-link" href="tel: +99871-233-14-10">
+                                <span class="footer__contact-icon">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M10.7259 5.27161C11.7258 5.43919 12.6341 5.91146 13.3592 6.6351C14.0843 7.35873 14.5538 8.26518 14.7255 9.26304M10.8786 2C12.657 2.30088 14.279 3.14259 15.5689 4.42609C16.8589 5.7134 17.6985 7.33206 18 9.10688M16.6108 16.1681C16.6108 16.1681 15.6452 17.1164 15.4086 17.3944C15.0232 17.8058 14.569 18 13.9737 18C13.9164 18 13.8553 18 13.7981 17.9962C12.6646 17.9238 11.6113 17.482 10.8213 17.105C8.6612 16.0614 6.76445 14.5799 5.18827 12.7022C3.88687 11.1369 3.01673 9.6896 2.44045 8.13568C2.08552 7.18733 1.95576 6.44846 2.01301 5.75148C2.05117 5.30588 2.22291 4.93644 2.53967 4.62033L3.84107 3.32159C4.02808 3.14639 4.22653 3.05118 4.42117 3.05118C4.6616 3.05118 4.85624 3.1959 4.97836 3.31778C4.98218 3.32159 4.986 3.3254 4.98981 3.32921C5.22261 3.5463 5.44397 3.771 5.67677 4.01095C5.79508 4.13282 5.9172 4.2547 6.03933 4.38038L7.08121 5.42014C7.48575 5.82385 7.48575 6.19709 7.08121 6.60081C6.97053 6.71126 6.86367 6.82171 6.753 6.92835C6.43242 7.25589 6.68425 7.00457 6.35222 7.30164C6.34459 7.30926 6.33696 7.31307 6.33314 7.32068C6.00493 7.64823 6.06599 7.96815 6.13469 8.18524C6.1385 8.19667 6.14232 8.20809 6.14614 8.21952C6.4171 8.8746 6.79874 9.49159 7.37884 10.2267L7.38265 10.2305C8.43598 11.5254 9.54656 12.5347 10.7716 13.3078C10.9281 13.4069 11.0884 13.4868 11.241 13.563C11.3784 13.6316 11.5082 13.6963 11.6189 13.7649C11.6341 13.7725 11.6494 13.7839 11.6647 13.7915C11.7944 13.8563 11.9166 13.8867 12.0425 13.8867C12.3593 13.8867 12.5577 13.6887 12.6226 13.6239L13.3707 12.8774C13.5004 12.7479 13.7065 12.5918 13.9469 12.5918C14.1836 12.5918 14.3782 12.7403 14.4965 12.8698C14.5003 12.8736 14.5003 12.8736 14.5041 12.8774L16.607 14.976C17.0001 15.3644 16.6108 16.1681 16.6108 16.1681Z"
+                                            stroke="currentColor" stroke-width="1.25" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </span>
+                                +998 90-338-70-00
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright"><span>© </span> 2025. Barcha huquqlar himoyalangan</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script defer src="./js/app.js"></script>
+    <script defer src="./js/ariza.js"></script>
+    <script defer src="./js/modal.js"></script>
+    <script defer src="./js/question.js"></script>
+</body>
+
+</html>

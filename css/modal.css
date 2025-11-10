@@ -1,0 +1,382 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.modal__overlay {
+    position: fixed;
+    z-index: 101;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+}
+
+.modal__sign {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 782px;
+    width: 100%;
+    display: none;
+    grid-template-columns: repeat(2, 1fr);
+    z-index: 111;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 600px;
+    background-color: #fff;
+    height: 600px;
+}
+
+.modal__sign-content {
+    background: linear-gradient(180deg, #76A5DB -5.25%, #466180 80.75%);
+    position: relative;
+    text-align: center;
+    padding-top: 42px;
+}
+
+.modal__sign-logo {
+    margin-bottom: 28px;
+}
+
+.modal__sign-title {
+    color: white;
+    font-size: 24px;
+    line-height: 130%;
+}
+
+.modal__sign-banner {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.modal__sign-form-block {
+    background-color: white;
+}
+
+.modal__sign-form-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 17px 24px;
+    border-bottom: 1px solid rgba(244, 243, 245, 1);
+    margin-bottom: 109px;
+}
+
+.modal__sign-form-title {
+    color: rgba(23, 23, 23, 1);
+    font-size: 24px;
+    line-height: 125%;
+    font-weight: 600;
+}
+
+.modal__sign-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 0 24px;
+}
+
+.modal__sign-form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.modal__sign-label {
+    color: rgba(23, 23, 23, 1);
+    font-size: 14px;
+    line-height: 100%;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.modal__sign-input {
+    border: 1px solid rgba(244, 243, 245, 1);
+    font-size: 16px;
+    font-weight: 300;
+    color: black;
+    border-radius: 12px;
+    padding: 12px;
+    transition: .2s ease;
+}
+
+.modal__sign-input:focus {
+    outline: 1px solid rgba(108, 148, 194, 1);
+}
+
+.modal__title {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 120%;
+    max-width: 281px;
+    text-align: center;
+}
+.modal__infos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.modal__img {
+    height: 50px;
+    width: 100%;
+    margin-bottom: 7px;
+    margin-left: 275px;
+}
+
+.modal__btn {
+    font-weight: 700;
+    color: white;
+    padding: 21.5px;
+    max-width: 355px;
+    border-radius: 12px;
+    width: 100%;
+    background-color: rgba(108, 148, 194, 1);
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.modal__sign-submit-btn {
+    display: flex;
+    width: 100%;
+    height: 63px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background-color: rgba(108, 148, 194, 1);
+    color: white;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 600;
+    transition: .2s ease;
+}
+
+
+.modal__sign-submit-btn:hover {
+    opacity: 0.8;
+}
+
+.modal__sign-submit-btn:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+}
+
+.spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s ease-in-out infinite;
+    margin-right: 8px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.success-message {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.success-message h2 {
+    margin: 0 0 15px 0;
+}
+
+.success-message p {
+    margin: 0;
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    .modal__sign-banner {
+        max-width: 250px;
+    }
+
+    .modal__sign-title {
+        font-size: 18px;
+        max-width: 250px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 580px) {
+    .modal__sign-content {
+        display: none !important;
+    }
+
+    .modal__sign-form-block {
+        width: 100%;
+    }
+
+    .modal__sign {
+        display: none;
+        grid-template-columns: 1fr;
+        height: 100vh;
+        border-radius: 0;
+    }
+
+    .modal__sign-form-header {
+        margin-bottom: 80px;
+    }
+}
+
+/* Thank you  */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 10px;
+    padding: 0;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-header {
+    background: rgba(118, 165, 219, 1);
+    color: white;
+    padding: 20px;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+}
+
+.modal-body {
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.success-icon {
+    font-size: 48px;
+    color: rgba(118, 165, 219, 1);
+    margin-bottom: 20px;
+    background: rgb(223 238 255);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.modal-body p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.modal-body p:first-of-type {
+    font-weight: bold;
+    font-size: 18px;
+    max-width: 270px;
+    margin: 0 auto;
+}
+
+.modal-footer {
+    padding: 0 20px 20px;
+    text-align: center;
+}
+
+.ok-btn {
+    background: rgba(118, 165, 219, 1);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.ok-btn:hover {
+    opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .modal-content {
+        width: 95%;
+        margin: 20px;
+    }
+
+    .modal-header h2 {
+        font-size: 20px;
+    }
+
+    .success-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 36px;
+    }
+}

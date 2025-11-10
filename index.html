@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IAAOC</title>
+    <link rel="icon" href="./img/logoHead.avif">
+    <!-- <link rel="stylesheet" href="./css/main.css" media="print" onload="this.media='all'" />
+    <noscript>
+        <link rel="stylesheet" href="./css/main.css" />
+    </noscript> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/modal.css">
+</head>
+
+<body>
+
+    <div id="thankYouModal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Rahmat!</h2>
+                <button class="close-btn" onclick="closeThankYouModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="success-icon">✓</div>
+                <p>Ma'lumotlaringiz muvaffaqiyatli yuborildi.</p>
+                <p>Tez orada siz bilan bog'lanamiz.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="ok-btn" onclick="closeThankYouModal()">OK</button>
+            </div>
+        </div>
+    </div>
+    <!-- modal  -->
+    <div class="modal__overlay"></div>
+    <div class="padding">
+        <div class="modal__sign">
+            <div class="modal__sign-content">
+                <img src="./img/modal_logo.avif" alt="logo" width="163" height="50" loading="lazy"
+                    class="modal__sign-logo">
+                <h2 class="modal__sign-title">Buxgalteriya autsorsing kompaniyalari uchun hamjamiyat</h2>
+                <img src="./img/modal-banner.avif" alt="banner" loading="lazy" class="modal__sign-banner">
+            </div>
+            <div class="modal__sign-form-block">
+                <div class="modal__sign-form-header">
+                    <p class="modal__sign-form-title">Ro’yxatdan o’tish</p>
+                    <button class="modal__sign-close-btn modal__close">
+                        <img src="./img/x.svg" width="24" height="24" loading="lazy" alt="x"
+                            class="modal__sign-close-icon">
+                    </button>
+                </div>
+                <div class="modal__infos">
+                    <h3 class="modal__title">Siz bilan to’liq tanishishimiz uchun quyidagi tugmani bosib Google Formani
+                        to’lidiring </h3>
+                    <img class="modal__img" src="./img/arrow.svg" loading="lazy" width="47" height="18"
+                        alt="arrow icon">
+                    <a class="modal__btn" href="./personal.html">
+                        Formani to’lidirish
+                    </a>
+                </div>
+
+                <div class="success-message hidden" id="successMessage">
+                    <h2>Muvaffaqiyatli!</h2>
+                    <p>Ma'lumotlaringiz muvaffaqiyatli yuborildi. Tez orada siz bilan bog'lanamiz!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal  -->
+
+    <header class="header">
+        <div class="header__container">
+            <div class="header__logo">
+                <a href="./index.html" class="header__logo-link">
+                    <img src="./img/logo.avif" alt="logo" width="181" height="63" loading="lazy"
+                        class="header__logo-img">
+                    <span class="header__logo-text">Tajribalarni birlashtirib <br>
+                        - Ishonchni oshiramiz</span>
+                </a>
+            </div>
+            <ul class="header__nav">
+                <li class="header__nav-item"><a href="#goal" class="header__nav-link">Assotsiatsiya haqida</a></li>
+                <li class="header__nav-item"><a href="#management" class="header__nav-link">Kengash</a></li>
+                <li class="header__nav-item"><a href="#benefits" class="header__nav-link">Azo’lar va Imtiyozlar</a></li>
+                <li class="header__nav-item"><a href="#news" class="header__nav-link">Yangiliklar</a></li>
+            </ul>
+            <div class="header__actions">
+                <button class="header__lang-btn">
+                    <img src="./img/world.svg" alt="world" class="header__lang-icon" width="20" height="20"
+                        loading="lazy">
+                    <p class="header__lang-text">O'zbekcha</p>
+                    <img src="./img/chevron-down.svg" alt="arrow" class="header__lang-arrow" width="20" height="20"
+                        loading="lazy">
+                    <ul class="header__lang-menu">
+                        <li class="header__lang-item">Русский</li>
+                        <li class="header__lang-item">English</li>
+                    </ul>
+                </button>
+                <button class="header__join-btn custom__btn open__modal">Shaxsiy kabinet</button>
+                <button class="hamburger__open-btn" id="hamburgerOpen">
+                    <svg width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1.45703H17M1 7.45703H17M1 13.457H17" stroke="black" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="hamburger__overlay" id="hamburgerOverlay">
+        <div class="hamburger__menu" id="hamburgerMenu">
+            <div class="hamburger__header">
+                <div class="hamburger__logo">
+                    <img src="./img/logo.avif" alt="logo" width="120" height="42" loading="lazy">
+                </div>
+                <button class="hamburger__close-btn" id="hamburgerClose">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+
+            <nav class="hamburger__nav">
+                <ul class="hamburger__nav-list">
+                    <li class="hamburger__nav-item">
+                        <a href="#goal" class="hamburger__nav-link">Assotsiatsiya haqida</a>
+                    </li>
+
+                    <li class="hamburger__nav-item">
+                        <a href="#management" class="hamburger__nav-link">Kengash</a>
+                    </li>
+                    <li class="hamburger__nav-item">
+                        <a href="#benefits" class="hamburger__nav-link">Azo’lar va Imtiyozlar</a>
+                    </li>
+                    <li class="hamburger__nav-item">
+                        <a href="#news" class="hamburger__nav-link">Yangiliklar</a>
+                    </li>
+
+                </ul>
+            </nav>
+
+            <div class="hamburger__actions">
+                <div class="hamburger__lang-selector">
+                    <button class="hamburger__lang-btn">
+                        <img src="./img/world.svg" alt="world" width="20" height="20">
+                        <span>O'zbekcha</span>
+                        <img src="./img/chevron-down.svg" alt="arrow" width="16" height="16">
+                        <ul class="hamburger__lang-menu">
+                            <li class="hamburger__lang-item">Русский</li>
+                            <li class="hamburger__lang-item">English</li>
+                        </ul>
+                    </button>
+                </div>
+                <a href="#app" class="hamburger__join-btn">A'zo bo'lish</a>
+            </div>
+        </div>
+    </div>
+
+    <section class="hero">
+        <div class="hero__container">
+            <div class="hero__content">
+                <p class="hero__rating">⭐️ 4.9 — o‘rtacha reyting</p>
+                <h1 class="hero__title">Tajribalarimizni birlashtirib
+                    ishonchni oshiramiz!</h1>
+                <p class="hero__description">Buxgalteriya autsorsing kompaniyalarini bir joyga to‘plab, professional va
+                    ishonchli tizim yaratadigan uyushma</p>
+                <button class="hero__button custom__btn open__modal">Ro’yxatdan o’tish</button>
+                <div class="hero__stats">
+                    <div class="hero__stat">
+                        <h3 class="hero__stat-number">100+</h3>
+                        <p class="hero__stat-text">Jamoamizdagi mutaxassislar soni</p>
+                    </div>
+                    <div class="hero__stat">
+                        <h3 class="hero__stat-number">3+ yil</h3>
+                        <p class="hero__stat-texts">O‘rtacha 3+ yil tajribaga ega kompaniyalar</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="hero__image-box">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img class="hero__image" src="./img/hero.avif" alt="hero" width="551"
+                                height="478" loading="lazy"></div>
+                        <div class="swiper-slide"><img class="hero__image" src="./img/hero-img2.avif" alt="hero"
+                                width="551" height="478" loading="lazy"></div>
+                        <div class="swiper-slide"><img class="hero__image" src="./img/hero-img3.avif" alt="hero"
+                                width="551" height="478" loading="lazy"></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="goal" class="goal">
+        <div class="goal__container">
+            <div class="goal__content">
+                <h2 class="goal__title">Assotsatsiyamiz missiya va maqsadlari
+                    <img class="goal__img" src="./img/highlight.avif" loading="lazy" alt="highlight">
+                </h2>
+                <p class="goal__description"><span>Missiyamiz </span> <b>—</b> Buxgalteriya autsorsing bilan
+                    shug‘ullanadigan kompaniyalarni
+                    bir joyga to‘plab, ularning hamkorligini rivojlantirish va sohada ishonchli tizim yaratish.</p>
+
+                <div class="goal__row">
+                    <div class="goal__col">
+                        <img src="./img/mission/1.avif" alt="icon">
+                        <h3 class="goal__info-title">Birlashuv va hamkorlik</h3>
+                        <p class="goal__info-text">Buxgalteriya autsorsing kompaniyalarini yagona professional
+                            platformada
+                            birlashtirib, tajriba
+                            almashuvni rivojlantirish</p>
+                    </div>
+                    <div class="goal__col">
+                        <img src="./img/mission/2.avif" alt="icon">
+                        <h3 class="goal__info-title">Professional standartlar</h3>
+                        <p class="goal__info-text">Xizmat sifati, axloq va javobgarlik mezonlarini joriy etish, shaffof
+                            va ishonchli autsorsing bozorini shakllantirish</p>
+                    </div>
+                    <div class="goal__col">
+                        <img src="./img/mission/3.avif" alt="icon">
+                        <h3 class="goal__info-title">Innovatsiya va raqamlashtirish</h3>
+                        <p class="goal__info-text">Zamonaviy texnologiyalarni joriy etish, jarayonlarni
+                            avtomatlashtirish va mutaxassislar malakasini oshirish</p>
+                    </div>
+                </div>
+                <button class="goal__button open__modal">A’zo bo’lish</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="management" id="management">
+        <div class="management__container">
+            <h2 class="management__title">Kengash</h2>
+            <p class="management__description">Assotsiaysiyamiz tajribali mutaxassislar tomonidan yaratilgan</p>
+            <div class="management__team">
+                <div class="management__member">
+                    <img class="management__member-image" src="./img/management/1.avif" alt="person" width="327"
+                        height="327" loading="lazy">
+                    <div class="management__member-info">
+                        <h4 class="management__member-name">Sultanov Otamurod
+                            Shavkat o’g’li</h4>
+                        <p class="management__member-experience">“TURAN OUTSOURSING SERVICE” Direktori</p>
+                    </div>
+                </div>
+                <div class="management__member">
+                    <img class="management__member-image" src="./img/management/4.avif" alt="person" width="327"
+                        height="327" loading="lazy">
+                    <div class="management__member-info">
+                        <h4 class="management__member-name">Artyom Atbashyan
+                            Mnatsakanovich</h4>
+                        <p class="management__member-experience">Kengash raisi
+                            “ATB CONSULT HOLDING” MCHJ direktori</p>
+                    </div>
+                </div>
+                <div class="management__member">
+                    <img class="management__member-image" src="./img/management/2.avif" alt="person" width="327"
+                        height="327" loading="lazy">
+                    <div class="management__member-info">
+                        <h4 class="management__member-name">Aleksandra Tolmacheva
+                            Vladimorovna</h4>
+                        <p class="management__member-experience">Tadbirkor, trener, TA-VAT kompaniyasi asoschisi</p>
+                    </div>
+                </div>
+                <div class="management__member">
+                    <img class="management__member-image" src="./img/management/3.avif" alt="person" width="327"
+                        height="327" loading="lazy">
+                    <div class="management__member-info">
+                        <h4 class="management__member-name">Saidqulov Avazbek <br>
+                            Botirqul o’g’li</h4>
+                        <p class="management__member-experience">“GROSSBOOK” MCHJ direktori</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="docs">
+        <div class="docs__container">
+            <h2 class="docs__title">Hujjatlar</h2>
+            <p class="docs__description">Assotsiatsiya faoliyati ochiq va shaffof.</p>
+            <div class="docs__list">
+                <div class="docs__item">
+                    <img class="docs__item-icon" src="./img/docs/1.avif" alt="icon" width="64" height="64"
+                        loading="lazy">
+                    <h3 class="docs__item-title">Reglament</h3>
+                    <p class="docs__item-description">Uyushma faoliyatini tartibga soluvchi ichki qoidalar va ish
+                        jarayonlari tartibi bilan tanishing.</p>
+
+                    <a class="docs__link" href="#">
+                        Hujjatni ko’rish
+                        <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.9924 0.665575C10.9632 4.96124 10.9562 5.99468 10.927 10.2904M10.9924 0.665575L1.36766 0.600183M10.9924 0.665575L0.421339 11.094"
+                                stroke="#191919" stroke-width="1.2" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="docs__item">
+                    <img class="docs__item-icon" src="./img/docs/2.avif" alt="icon" width="64" height="64"
+                        loading="lazy">
+                    <h3 class="docs__item-title">Ustav</h3>
+                    <p class="docs__item-description">Tashkilotning maqsadi, vazifalari va boshqaruv tartibini
+                        belgilovchi asosiy hujjatlar</p>
+
+                    <a class="docs__link" href="#">
+                        Hujjatni ko’rish
+                        <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.9924 0.665575C10.9632 4.96124 10.9562 5.99468 10.927 10.2904M10.9924 0.665575L1.36766 0.600183M10.9924 0.665575L0.421339 11.094"
+                                stroke="#191919" stroke-width="1.2" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="docs__item">
+                    <img class="docs__item-icon" src="./img/docs/3.avif" alt="icon" width="64" height="64"
+                        loading="lazy">
+                    <h3 class="docs__item-title">Guvohnoma va ta’sischilar</h3>
+                    <p class="docs__item-description">Uyushmaning davlat ro‘yxatidan o‘tganligi hamda asos solgan
+                        ta’sischilar haqida rasmiy ma’lumot</p>
+
+                    <a class="docs__link" href="#">
+                        Hujjatni ko’rish
+                        <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.9924 0.665575C10.9632 4.96124 10.9562 5.99468 10.927 10.2904M10.9924 0.665575L1.36766 0.600183M10.9924 0.665575L0.421339 11.094"
+                                stroke="#191919" stroke-width="1.2" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="docs__item">
+                    <img class="docs__item-icon" src="./img/docs/4.avif" alt="icon" width="64" height="64"
+                        loading="lazy">
+                    <h3 class="docs__item-title">Protokol</h3>
+                    <p class="docs__item-description">Uyushma yig‘ilishlari, qarorlar va muhim tashabbuslar bo‘yicha
+                        rasmiy qaydlar to‘plami</p>
+
+                    <a class="docs__link" href="#">
+                        Hujjatni ko’rish
+                        <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.9924 0.665575C10.9632 4.96124 10.9562 5.99468 10.927 10.2904M10.9924 0.665575L1.36766 0.600183M10.9924 0.665575L0.421339 11.094"
+                                stroke="#191919" stroke-width="1.2" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="members">
+        <div class="members__container">
+            <h2 class="docs__title">A’zolar ro’yxati</h2>
+            <p class="docs__description">A’zolarimizni huquqlarini o’zimiznikidek himoya qilamiz</p>
+
+            <div class="members__carousel">
+
+                <div class="members__track">
+                    <div class="members__info">
+                        <img class="members__img" width="327" height="327" src="./img/member-list/1.avif" alt="">
+                        <h4 class="members__info-title">Turan Os</h4>
+                        <p class="members__info-description">Kichik va o‘rta biznes uchun buxgalteriya autsorsing va
+                            soliq
+                            maslahati ximzatlari</p>
+                    </div>
+                    <div class="members__info">
+                        <img class="members__img" width="327" height="327" src="./img/member-list/2.avif" alt="">
+                        <h4 class="members__info-title">ATB Accounting Consulting</h4>
+                        <p class="members__info-description">Kichik va o‘rta biznes uchun buxgalteriya, audit va
+                            moliyaviy
+                            hisobot xizmatlari</p>
+                    </div>
+                    <div class="members__info">
+                        <img class="members__img" width="327" height="327" src="./img/member-list/3.avif" alt="">
+                        <h4 class="members__info-title">Ta-Vat consulting</h4>
+                        <p class="members__info-description">Kichik va o‘rta biznesga buxgalteriya, kadrlar va soliq
+                            xizmatlarini ko‘rsatadi</p>
+                    </div>
+                    <div class="members__info">
+                        <img class="members__img" width="327" height="327" src="./img/member-list/4.avif" alt="">
+                        <h4 class="members__info-title">Grossbook</h4>
+                        <p class="members__info-description">Kichik va o‘rta biznes uchun buxgalteriya va soliq
+                            hisobini
+                            yuritishga ixtisoslashgan</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="members__gradient"></div>
+        </div>
+    </section>
+
+
+    <section class="benefits" id="benefits">
+        <div class="benefits__container">
+            <h2 class="docs__title">A’zolik imtiyozlari</h2>
+            <p class="docs__description">Uyushmaga qo’shilish orqali quyidagilarga erishasiz</p>
+            <div class="benefitsnt__team">
+                <div class="benefits__member">
+                    <img class="benefits__member-image" src="./img/benefits/1.png" alt="person" width="270" height="171"
+                        loading="lazy">
+                    <div class="benefits__member-info">
+                        <h4 class="benefits__member-name">1. Firibgarlar ro’yxati</h4>
+                        <p class="benefits__member-experience">Qora ro‘yxatdagi mijozlar va ishonchsiz agentliklar
+                            haqida
+                            oldindan ma’lumot olasiz</p>
+                    </div>
+                </div>
+                <div class="benefits__member">
+                    <img class="benefits__member-image" src="./img/benefits/2.png" alt="person" width="270" height="171"
+                        loading="lazy">
+                    <div class="benefits__member-info">
+                        <h4 class="benefits__member-name">2. Tadbirlar</h4>
+                        <p class="benefits__member-experience">Seminarlar va o‘quv dasturlari orqali Siz va
+                            jamoangizning bilim va malakasi muntazam oshib boradi</p>
+                    </div>
+                </div>
+                <div class="benefits__member">
+                    <img class="benefits__member-image" src="./img/benefits/3.png" alt="person" width="270" height="171"
+                        loading="lazy">
+                    <div class="benefits__member-info">
+                        <h4 class="benefits__member-name">3. Yangi tanishuvlar</h4>
+                        <p class="benefits__member-experience">Sohadoshlar bilan tanishib, foydali aloqalar
+                            o‘rnashtirasiz. Networking kengayadi</p>
+                    </div>
+                </div>
+                <div class="benefits__member">
+                    <img class="benefits__member-image" src="./img/benefits/5.png" alt="person" width="270" height="171"
+                        loading="lazy">
+                    <div class="benefits__member-info">
+                        <h4 class="benefits__member-name">4. Tajriba almashinuvi</h4>
+                        <p class="benefits__member-experience">Mutaxassislar bilan uchrashuvlar o’tkazib biznes
+                            muammolaringizga tayyor yechimlar olasiz</p>
+                    </div>
+                </div>
+                <div class="benefits__member">
+                    <img class="benefits__member-image" src="./img/benefits/4.png" alt="person" width="270" height="171"
+                        loading="lazy">
+                    <div class="benefits__member-info">
+                        <h4 class="benefits__member-name">5. Ishlarni tartiblash</h4>
+                        <p class="benefits__member-experience">Mijoz bilan muloqot, narx belgilash va shartnomalar
+                            bo‘yicha aniq tizim va amaliy ko‘rsatmalar olasiz</p>
+                    </div>
+                </div>
+                <div class="benefits__member">
+                    <img class="benefits__member-image" src="./img/benefits/6.png" alt="person" width="270" height="171"
+                        loading="lazy">
+                    <div class="benefits__member-info">
+                        <h4 class="benefits__member-name">6. Raqamlashtirish</h4>
+                        <p class="benefits__member-experience">Avtomatlashtirish, zamonaviy dasturlar va raqamli
+                            yechimlardan foydalanish bo‘yicha amaliy yordam olasiz.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="app" class="app">
+        <div class="app__container">
+            <h2 class="app__title">A’zolikka ariza topshiring</h2>
+            <p class="app__description">Assotsiatsiyaga qo‘shilish orqali siz yangi hamkorliklar, bilim almashish va
+                rivojlanish imkoniyatlariga ega bo‘lasiz. Quyidagi formani to‘ldiring va arizangizni yuboring</p>
+            <form class="app__form" id="applicationFormAriza">
+                <div class="app__inpBox">
+                    <label class="app__form-label" for="nameAriza">To'liq ism sharif</label>
+                    <input class="app__form-input" type="text" name="name" id="nameAriza"
+                        placeholder="To'liq ism sharif" required>
+                </div>
+                <div class="app__inpBox">
+                    <label class="app__form-label" for="telAriza">Telefon raqam</label>
+                    <input class="app__form-input" type="tel" name="tel" id="telAriza"
+                        placeholder="To'liq telefon raqam" required>
+                </div>
+                <div class="app__inpBox">
+                    <label class="app__form-label" for="messageAriza">Izoh</label>
+                    <textarea class="app__form-textarea" name="message" id="messageAriza"
+                        placeholder="Izohingizni kiriting" required></textarea>
+                </div>
+                <div class="app__form-actions">
+                    <div class="app__form-checkbox-group">
+                        <input class="app__form-checkbox" type="checkbox" id="checkboxAriza" required>
+                        <label class="app__form-checkbox-label" for="checkboxAriza">Qabul qilish shartlari</label>
+                    </div>
+                    <button class="app__form-button" type="submit" id="submitBtnAriza">
+                        <span id="btnTextAriza">Yuborish</span>
+                    </button>
+                </div>
+                <div class="success-message-ariza" id="successMessageAriza">
+                    Ariza muvaffaqiyatli yuborildi! Tez orada siz bilan bog'lanamiz.
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section id="news" class="news">
+        <div class="news__container">
+            <h2 class="news__title">Yangiliklar</h2>
+            <p class="news__description">Assotsiatsiya a’zolari va ekspertlarining foydali maqolalari va yangiliklari
+            </p>
+            <div class="news__list">
+                <div class="news__item">
+                    <a href="#" class="news__item-link">
+                        <img class="news__item-image" src="./img/news/1.avif" alt="build" width="381" height="258"
+                            loading="lazy">
+                        <h3 class="news__item-title">Ommaviy Axborot Vositalari
+                            biz haqimizda</h3>
+                        </a>
+                            <p class="news__item-text">O‘zbekistonda xalqaro buxgalteriya autsorsing
+                                kompaniyalari uyushmasi o‘z
+                                faoliyatini boshladi. Uyushma buxgalteriya autsorsing bozoridagi kompaniyalarni
+                                birlashtirib...
+                            </p>
+                            <p class="news__item-date">
+                                <span class="news__item-date-icon">
+                                    <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M13.8333 2.5V5.83333M7.16659 2.5V5.83333M3.83325 9.16667H17.1666M9.66659 12.5H10.4999V15M3.83325 5.83333C3.83325 5.39131 4.00885 4.96738 4.32141 4.65482C4.63397 4.34226 5.05789 4.16667 5.49992 4.16667H15.4999C15.9419 4.16667 16.3659 4.34226 16.6784 4.65482C16.991 4.96738 17.1666 5.39131 17.1666 5.83333V15.8333C17.1666 16.2754 16.991 16.6993 16.6784 17.0118C16.3659 17.3244 15.9419 17.5 15.4999 17.5H5.49992C5.05789 17.5 4.63397 17.3244 4.32141 17.0118C4.00885 16.6993 3.83325 16.2754 3.83325 15.8333V5.83333Z"
+                                            stroke="#697583" stroke-width="1.6" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </span>
+                                23-Oktabr, 18:23
+                            </p>
+                </div>
+                <div class="news__item">
+                    <a href="#" class="news__item-link">
+                        <img class="news__item-image" src="./img/news/2.avif" alt="build" width="381" height="258"
+                            loading="lazy">
+                        <h3 class="news__item-title">Raqamli buxgalteriya tizimi kengaymoqda</h3>
+                    </a>
+                    <p class="news__item-text">O‘zbekistonda kop kompaniyalar “1C: Buxgalteriya 8” va UzAsbo
+                        kabi
+                        dasturlar orqali hisob-kitob va soliq hisobotlarini avtomatlashtirishga o‘tmoqda
+                    </p>
+                    <p class="news__item-date">
+                        <span class="news__item-date-icon">
+                            <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M13.8333 2.5V5.83333M7.16659 2.5V5.83333M3.83325 9.16667H17.1666M9.66659 12.5H10.4999V15M3.83325 5.83333C3.83325 5.39131 4.00885 4.96738 4.32141 4.65482C4.63397 4.34226 5.05789 4.16667 5.49992 4.16667H15.4999C15.9419 4.16667 16.3659 4.34226 16.6784 4.65482C16.991 4.96738 17.1666 5.39131 17.1666 5.83333V15.8333C17.1666 16.2754 16.991 16.6993 16.6784 17.0118C16.3659 17.3244 15.9419 17.5 15.4999 17.5H5.49992C5.05789 17.5 4.63397 17.3244 4.32141 17.0118C4.00885 16.6993 3.83325 16.2754 3.83325 15.8333V5.83333Z"
+                                    stroke="#697583" stroke-width="1.6" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                        25-Oktabr, 09:00
+                    </p>
+                </div>
+                <div class="news__item">
+                    <a href="#" class="news__item-link">
+                        <img class="news__item-image" src="./img/news/3.avif" alt="build" width="381" height="258"
+                            loading="lazy">
+                        <h3 class="news__item-title">Xorijiy fuqarolar uchun soliq rejimi joriy etiladi</h3>
+                    </a>
+
+                            <p class="news__item-text">2026 yil 1 yanvardan boshlab O‘zbekistonda xorijiy shaxslar uchun
+                                soliq
+                                tizimida maxsus rejim joriy etiladi — chetdan tushgan daromadlardan shaxsiy daromad
+                                solig‘i
+                                olinmaydi...</p>
+                            <p class="news__item-date">
+                                <span class="news__item-date-icon">
+                                    <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M13.8333 2.5V5.83333M7.16659 2.5V5.83333M3.83325 9.16667H17.1666M9.66659 12.5H10.4999V15M3.83325 5.83333C3.83325 5.39131 4.00885 4.96738 4.32141 4.65482C4.63397 4.34226 5.05789 4.16667 5.49992 4.16667H15.4999C15.9419 4.16667 16.3659 4.34226 16.6784 4.65482C16.991 4.96738 17.1666 5.39131 17.1666 5.83333V15.8333C17.1666 16.2754 16.991 16.6993 16.6784 17.0118C16.3659 17.3244 15.9419 17.5 15.4999 17.5H5.49992C5.05789 17.5 4.63397 17.3244 4.32141 17.0118C4.00885 16.6993 3.83325 16.2754 3.83325 15.8333V5.83333Z"
+                                            stroke="#697583" stroke-width="1.6" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </span>
+                                10-Oktyabr, 10:10
+                            </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="faq">
+        <div class="faq__container">
+            <h2 class="faq__title">FAQ</h2>
+            <p class="faq__description">Foydalanuvchilarimiz tomonidan ko’p beriladigan savollar</p>
+            <div class="faq__content">
+                <div class="faq__questions">
+                    <div class="faq__question">
+                        <button class="faq__question-toggle">
+                            <p class="faq__question-text">Kimlar assotsiatsiya a’zosi bo‘lishi mumkin?</p>
+                            <span class="faq__question-icon">
+                                <img class="icon-plus" src="./img/plus.svg" width="28" height="28" loading="lazy"
+                                    alt="toggle-icon">
+                                <img class="icon-minus" src="./img/minus.svg" width="28" height="28" loading="lazy"
+                                    alt="toggle-icons">
+                            </span>
+                        </button>
+                        <p class="faq__answer">
+                            A’zolik faqat yuridik shaxslarga beriladi. Kompaniya kamida 2 yillik tajribaga ega bo‘lishi,
+                            yillik aylanmasi kamida 300 bazaviy miqdordan oshishi va xizmatlarining kamida 70 foizi
+                            buxgalteriya autsorsingiga to‘g‘ri kelishi kerak.
+                        </p>
+                    </div>
+                    <div class="faq__question">
+                        <button class="faq__question-toggle">
+                            <p class="faq__question-text">Agar kompaniya hali yetarli tajribaga ega bo‘lmasa-chi?</p>
+                            <span class="faq__question-icon">
+                                <img class="icon-plus" src="./img/plus.svg" width="28" height="28" loading="lazy"
+                                    alt="toggle-icon">
+                                <img class="icon-minus" src="./img/minus.svg" width="28" height="28" loading="lazy"
+                                    alt="toggle-icons">
+                            </span>
+                        </button>
+                        <p class="faq__answer">
+                            Bunday kompaniyalar 1 yilga “kuzatuvchi” sifatida qo‘shilishi mumkin. Shu vaqt ichida ular
+                            to‘liq a’zolikka o‘sadi
+                        </p>
+                    </div>
+                    <div class="faq__question">
+                        <button class="faq__question-toggle">
+                            <p class="faq__question-text">Qanday qilib a’zo bo‘lish mumkin?</p>
+                            <span class="faq__question-icon">
+                                <img class="icon-plus" src="./img/plus.svg" width="28" height="28" loading="lazy"
+                                    alt="toggle-icon">
+                                <img class="icon-minus" src="./img/minus.svg" width="28" height="28" loading="lazy"
+                                    alt="toggle-icons">
+                            </span>
+                        </button>
+                        <p class="faq__answer">
+                            Onlayn Google Forma to‘ldirasiz va kerakli hujjatlarni yuklaysiz
+                        </p>
+                    </div>
+                    <div class="faq__question">
+                        <button class="faq__question-toggle">
+                            <p class="faq__question-text">Ariza necha kunda ko‘rib chiqiladi?</p>
+                            <span class="faq__question-icon">
+                                <img class="icon-plus" src="./img/plus.svg" width="28" height="28" loading="lazy"
+                                    alt="toggle-icon">
+                                <img class="icon-minus" src="./img/minus.svg" width="28" height="28" loading="lazy"
+                                    alt="toggle-icons">
+                            </span>
+                        </button>
+                        <p class="faq__answer">
+                            5 ish kunida javob beriladi
+                        </p>
+                    </div>
+                    <div class="faq__question">
+                        <button class="faq__question-toggle">
+                            <p class="faq__question-text">A’zolarga qanday imkoniyatlar beriladi?</p>
+                            <span class="faq__question-icon">
+                                <img class="icon-plus" src="./img/plus.svg" width="28" height="28" loading="lazy"
+                                    alt="toggle-icon">
+                                <img class="icon-minus" src="./img/minus.svg" width="28" height="28" loading="lazy"
+                                    alt="toggle-icons">
+                            </span>
+                        </button>
+                        <ul class="faq__answer ml">
+                            <li>Tadbirlar va treninglarda qatnashish</li>
+                            <li>Tajriba almashish</li>
+                            <li>Metodik qo‘llanmalar olish</li>
+                            <li>Assotsiatsiya logotipidan foydalanish</li>
+                        </ul>
+                    </div>
+                    <div class="faq__question">
+                        <button class="faq__question-toggle">
+                            <p class="faq__question-text">Yillik to‘lov bormi?</p>
+                            <span class="faq__question-icon">
+                                <img class="icon-plus" src="./img/plus.svg" width="28" height="28" loading="lazy"
+                                    alt="toggle-icon">
+                                <img class="icon-minus" src="./img/minus.svg" width="28" height="28" loading="lazy"
+                                    alt="toggle-icons">
+                            </span>
+                        </button>
+                        <p class="faq__answer">
+                            Ha, bor. Miqdori ichki hujjatlarda belgilanadi
+                        </p>
+                    </div>
+                    <div class="faq__question">
+                        <button class="faq__question-toggle">
+                            <p class="faq__question-text">Qanday holatda a’zolik to‘xtatiladi?</p>
+                            <span class="faq__question-icon">
+                                <img class="icon-plus" src="./img/plus.svg" width="28" height="28" loading="lazy"
+                                    alt="toggle-icon">
+                                <img class="icon-minus" src="./img/minus.svg" width="28" height="28" loading="lazy"
+                                    alt="toggle-icons">
+                            </span>
+                        </button>
+                        <ul class="faq__answer ml">
+                            <li>Qoidalarga amal qilmaslik</li>
+                            <li>To‘lovni o‘z vaqtida qilmaslik</li>
+                            <li>Yolg‘on ma’lumot berish</li>
+                        </ul>
+                    </div>
+                    <div class="faq__question">
+                        <button class="faq__question-toggle">
+                            <p class="faq__question-text">Chiqarib yuborilgan kompaniya qayta kirishi mumkinmi?</p>
+                            <span class="faq__question-icon">
+                                <img class="icon-plus" src="./img/plus.svg" width="28" height="28" loading="lazy"
+                                    alt="toggle-icon">
+                                <img class="icon-minus" src="./img/minus.svg" width="28" height="28" loading="lazy"
+                                    alt="toggle-icons">
+                            </span>
+                        </button>
+                        <p class="faq__answer">
+                            Ha, 3 oydan keyin yana ariza topshirsa bo‘ladi
+                        </p>
+                    </div>
+                    <div class="faq__question">
+                        <button class="faq__question-toggle">
+                            <p class="faq__question-text">“A’zo” va “kuzatuvchi”ning farqi nimada?</p>
+                            <span class="faq__question-icon">
+                                <img class="icon-plus" src="./img/plus.svg" width="28" height="28" loading="lazy"
+                                    alt="toggle-icon">
+                                <img class="icon-minus" src="./img/minus.svg" width="28" height="28" loading="lazy"
+                                    alt="toggle-icons">
+                            </span>
+                        </button>
+                        <p class="faq__answer">
+                            A’zolar daha ko‘p imkoniyatlarga ega: yopiq loyihalar, sertifikatlar va sifat belgisi olish
+                            huquqi bor
+                        </p>
+                    </div>
+                    <div class="faq__question">
+                        <button class="faq__question-toggle">
+                            <p class="faq__question-text">Boshqa a’zolarning mijozlarini o‘zingizga o‘tkazish mumkinmi?
+                            </p>
+                            <span class="faq__question-icon">
+                                <img class="icon-plus" src="./img/plus.svg" width="28" height="28" loading="lazy"
+                                    alt="toggle-icon">
+                                <img class="icon-minus" src="./img/minus.svg" width="28" height="28" loading="lazy"
+                                    alt="toggle-icons">
+                            </span>
+                        </button>
+                        <p class="faq__answer">
+                            Yo‘q. Bu qat’iyan taqiqlanadi. Buzilsa — Assotsiatsiyadan chetlashtiriladi!
+                        </p>
+                    </div>
+                </div>
+                <div class="faq__contact">
+                    <img class="faq__contact-image" src="./img/question.avif" width="236" height="176" loading="lazy"
+                        alt="question">
+                    <h3 class="faq__contact-title">Savollar qoldimi?</h3>
+                    <p class="faq__contact-text">Savolingizni pastdagi tugma orqali yuboring — qisqa fursatda javob
+                        beramiz</p>
+                    <a href="#contact" class="faq__contact-button">Savol berish</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="bottom-form">
+        <div class="bottom-form__container">
+            <h2 class="bottom-form__title">Biror bir savolingiz bormi</h2>
+            <p class="bottom-form__description">Savollaringiz bo’lsa hoziroq bizga yozib qoldiring biz sizga aloqaga
+                chiqamiz</p>
+            <form class="bottom-form__form" id="questionForm">
+                <div class="bottom-form__input-group">
+                    <div class="bottom-form__input-wrapper">
+                        <label class="bottom-form__label" for="nameQues">Ismingiz</label>
+                        <input class="bottom-form__input" type="text" required autocomplete="name" id="nameQues"
+                            name="name" placeholder="Iltimos ismingizni kiriting">
+                    </div>
+                    <div class="bottom-form__input-wrapper">
+                        <label class="bottom-form__label" for="telQues">Telefon raqam</label>
+                        <input class="bottom-form__input" type="tel" required autocomplete="tel" name="tel" id="telQues"
+                            placeholder="+998 000-00-00">
+                    </div>
+                </div>
+                <div class="bottom-form__textarea-wrapper">
+                    <label class="bottom-form__label" for="messageQues">Qo'shimcha savollar</label>
+                    <textarea class="bottom-form__textarea" name="message" id="messageQues"
+                        placeholder="Qo'shimca savollaringizni kiriting......."></textarea>
+                </div>
+                <div class="success-message-ques" id="successMessageQues">
+                    ✅ Ariza muvaffaqiyatli yuborildi! Tez orada siz bilan bog'lanamiz.
+                </div>
+                <div class="bottom-form__actions">
+                    <div class="bottom-form__checkbox-wrapper">
+                        <div style="width: 24px; height: 24px;">
+                            <input class="bottom-form__checkbox" id="checkQues" type="checkbox" required>
+                        </div>
+                        <label class="bottom-form__labelCheck" for="checkQues">Offerta shartlariga roziman</label>
+                    </div>
+                    <button class="bottom-form__button" type="submit" id="submitBtnQues">
+                        <span id="btnTextQues">Yuborish</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+
+    <div class="maps">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d187.32350641473926!2d69.26986044188713!3d41.30503245142903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b0cc379e9c3%3A0xa5a9323b4aa5cb98!2sTashkent%2C%20Uzbekistan!5e0!3m2!1sen!2s!4v1762698975486!5m2!1sen!2s"
+            width="1920" height="557" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        <div class="maps__box">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="10" cy="9.16699" rx="2.5" ry="2.5" stroke="#EA4335" stroke-width="1.25"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M14.7143 13.8806L11.1785 17.4164C10.5278 18.0665 9.4734 18.0665 8.82266 17.4164L5.286 13.8806C2.6826 11.2771 2.68267 7.05602 5.28616 4.45258C7.88964 1.84914 12.1107 1.84914 14.7142 4.45258C17.3177 7.05602 17.3177 11.2771 14.7143 13.8806V13.8806Z"
+                    stroke="#EA4335" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <p class="maps__description">Toshkent shahri Chilonzor tumani “ц” kvartal 7/1 </p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__brand">
+                <a class="footer__logo-link" href="#">
+                    <img class="footer__logo" src="./img/footlogo.avif" alt="logo" width="163" height="50"
+                        loading="lazy">
+                </a>
+                <ul class="footer__social-list">
+                    <li class="footer__social-item">
+                        <a class="footer__social-link" target="_blank" href="#">
+                            <img class="footer__social-icon" src="./img/footer/telegram.svg" alt="social media icon"
+                                width="32" height="32" loading="lazy">
+                        </a>
+                    </li>
+                    <li class="footer__social-item">
+                        <a class="footer__social-link" target="_blank" href="#">
+                            <img class="footer__social-icon" src="./img/footer/instagram.svg" alt="social media icon"
+                                width="32" height="32" loading="lazy">
+                        </a>
+                    </li>
+                    <li class="footer__social-item">
+                        <a class="footer__social-link" target="_blank" href="#">
+                            <img class="footer__social-icon" src="./img/footer/youtube.svg" alt="social media icon"
+                                width="32" height="32" loading="lazy">
+                        </a>
+                    </li>
+                    <li class="footer__social-item">
+                        <a class="footer__social-link" target="_blank" href="#">
+                            <img class="footer__social-icon" src="./img/footer/facebook.svg" alt="social media icon"
+                                width="32" height="32" loading="lazy">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__content">
+                <div class="footer__links">
+                    <ul class="footer__links-list">
+                        <li class="footer__links-item"><a class="footer__link" href="#goal">Assotsiatsiya haqida</a>
+                        </li>
+                        <li class="footer__links-item"><a class="footer__link" href="#management">Kengash</a></li>
+                        <li class="footer__links-item"><a class="footer__link" href="#benefits">Azo’lar va
+                                Imtiyozlar</a></li>
+                        <li class="footer__links-item"><a class="footer__link" href="#news">Yangiliklar</a></li>
+                    </ul>
+
+                    <p class="footer__description">Buxgalteriya autsorsing kompaniyalarini bir joyga to‘plab,
+                        professional va ishonchli tizim yaratadigan uyushma.</p>
+                </div>
+                <div class="footer__contact">
+                    <ul class="footer__contact-list">
+                        <li class="footer__contact-item">
+                            <a class="footer__contact-link" href="https://yandex.uz/maps/-/CLQ2nDO3">
+                                <span class="footer__contact-icon">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <ellipse cx="10" cy="9.16699" rx="2.5" ry="2.5" stroke="currentColor"
+                                            stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M14.7141 13.8806L11.1783 17.4164C10.5275 18.0665 9.47316 18.0665 8.82242 17.4164L5.28575 13.8806C2.68236 11.2771 2.68243 7.05602 5.28591 4.45258C7.8894 1.84914 12.1104 1.84914 14.7139 4.45258C17.3174 7.05602 17.3175 11.2771 14.7141 13.8806V13.8806Z"
+                                            stroke="currentColor" stroke-width="1.25" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </span>
+                                Toshkent shahri Chilonzor tumani “ц” kvartal 7/1 
+                            </a>
+                        </li>
+                        <li class="footer__contact-item">
+                            <a class="footer__contact-link" href="tel: +99871-233-14-10">
+                                <span class="footer__contact-icon">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M10.7259 5.27161C11.7258 5.43919 12.6341 5.91146 13.3592 6.6351C14.0843 7.35873 14.5538 8.26518 14.7255 9.26304M10.8786 2C12.657 2.30088 14.279 3.14259 15.5689 4.42609C16.8589 5.7134 17.6985 7.33206 18 9.10688M16.6108 16.1681C16.6108 16.1681 15.6452 17.1164 15.4086 17.3944C15.0232 17.8058 14.569 18 13.9737 18C13.9164 18 13.8553 18 13.7981 17.9962C12.6646 17.9238 11.6113 17.482 10.8213 17.105C8.6612 16.0614 6.76445 14.5799 5.18827 12.7022C3.88687 11.1369 3.01673 9.6896 2.44045 8.13568C2.08552 7.18733 1.95576 6.44846 2.01301 5.75148C2.05117 5.30588 2.22291 4.93644 2.53967 4.62033L3.84107 3.32159C4.02808 3.14639 4.22653 3.05118 4.42117 3.05118C4.6616 3.05118 4.85624 3.1959 4.97836 3.31778C4.98218 3.32159 4.986 3.3254 4.98981 3.32921C5.22261 3.5463 5.44397 3.771 5.67677 4.01095C5.79508 4.13282 5.9172 4.2547 6.03933 4.38038L7.08121 5.42014C7.48575 5.82385 7.48575 6.19709 7.08121 6.60081C6.97053 6.71126 6.86367 6.82171 6.753 6.92835C6.43242 7.25589 6.68425 7.00457 6.35222 7.30164C6.34459 7.30926 6.33696 7.31307 6.33314 7.32068C6.00493 7.64823 6.06599 7.96815 6.13469 8.18524C6.1385 8.19667 6.14232 8.20809 6.14614 8.21952C6.4171 8.8746 6.79874 9.49159 7.37884 10.2267L7.38265 10.2305C8.43598 11.5254 9.54656 12.5347 10.7716 13.3078C10.9281 13.4069 11.0884 13.4868 11.241 13.563C11.3784 13.6316 11.5082 13.6963 11.6189 13.7649C11.6341 13.7725 11.6494 13.7839 11.6647 13.7915C11.7944 13.8563 11.9166 13.8867 12.0425 13.8867C12.3593 13.8867 12.5577 13.6887 12.6226 13.6239L13.3707 12.8774C13.5004 12.7479 13.7065 12.5918 13.9469 12.5918C14.1836 12.5918 14.3782 12.7403 14.4965 12.8698C14.5003 12.8736 14.5003 12.8736 14.5041 12.8774L16.607 14.976C17.0001 15.3644 16.6108 16.1681 16.6108 16.1681Z"
+                                            stroke="currentColor" stroke-width="1.25" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </span>
+                                +998 90-338-70-00
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright"><span>© </span> 2025. Barcha huquqlar himoyalangan</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script defer src="./js/app.js"></script>
+    <script defer src="./js/ariza.js"></script>
+    <script defer src="./js/modal.js"></script>
+    <script defer src="./js/question.js"></script>
+</body>
+
+</html>
