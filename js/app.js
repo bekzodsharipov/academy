@@ -202,6 +202,11 @@ document.addEventListener("DOMContentLoaded", () => {
 var swiper = new Swiper(".mySwiper", {
   spaceBetween: 30,
   loop: true,
+  effect: "fade",
+  autoplay: {
+    delay: 1800,
+    disableOnInteraction: false,
+  },
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
