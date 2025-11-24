@@ -891,6 +891,7 @@ button {
 .members__info {
     flex-shrink: 0;
 }
+
 .members__track {
     display: flex;
     gap: 32px;
@@ -1137,6 +1138,13 @@ button {
     margin-bottom: 4px;
 }
 
+.news__titles {
+    color: rgba(43, 43, 43, 1);
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 130%;
+}
+
 .news__description {
     color: rgba(105, 117, 131, 1);
     font-size: 16px;
@@ -1146,6 +1154,122 @@ button {
     max-width: 394px;
 }
 
+
+.news__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.news__boxss {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+
+
+.news-filter {
+    display: inline-flex;
+    flex-direction: column;
+    font-family: "Cosmica Trial", sans-serif;
+    max-width: 189px;
+    width: 100%;
+    border-radius: 12px;
+    border: 0.5px solid #000000;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+.news-filter__head {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: space-between;
+    padding: 9px 16px 9px 16px;
+    background: linear-gradient(114.8deg, #09090B 34.2%, #5C5C71 99.47%);
+    color: #ffffff;
+
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 130%;
+}
+
+.news-filter__head::after {
+    content: "";
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    width: 9px;
+    height: 9px;
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    transform: translateY(-55%) rotate(45deg);
+}
+
+.news-filter__head.open::after {
+    transform: translateY(-55%) rotate(-135deg);
+}
+
+.news-filter__body {
+    display: none;
+    flex-direction: column;
+    background-color: #ffffff;
+}
+
+.news-filter__item {
+    padding: 10px 16px 11px 16px;
+
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 130%;
+    color: #000000;
+
+    background-color: #ffffff;
+    border-top: 0.5px solid #E4E4EC;
+}
+
+.news-filter__item--active {
+    background-color: #F2F3F7;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+
+    background: white;
+    border-radius: 0 0 18px 18px;
+    border: 1px solid #D0D1D5;
+    border-top: none;
+    overflow: hidden;
+
+    display: none;
+}
+
+.select-wrapper.open .dropdown {
+    display: block;
+}
+
+.dropdown-item {
+    padding: 14px 16px;
+    font-family: "Cosmica Trial", sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    cursor: pointer;
+    background: #F3F4F8;
+}
+
+.dropdown-item:hover {
+    background: #E5E7F0;
+}
+
+
+
+
 .news__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1154,6 +1278,8 @@ button {
 }
 
 .news__item {
+    flex-direction: column;
+    align-items: start;
     max-width: 381px;
     width: 100%;
 }
@@ -2101,8 +2227,10 @@ button {
 .personal {
     padding-top: 167px;
     background-image: url(../img/bg.avif);
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    width: 100%;
 }
 
 .personal__container {
@@ -2126,8 +2254,8 @@ button {
     font-size: 48px;
     line-height: 130%;
     font-weight: 700;
-    margin-bottom: 31px;
     text-align: center;
+    padding-bottom: 250px;
     color: #09090B;
 }
 
@@ -2580,6 +2708,7 @@ img {
 
     .personal__subtitle {
         font-size: 35px;
+        padding-bottom: 100px;
     }
 
     .personal__description {

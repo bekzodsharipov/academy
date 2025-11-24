@@ -1,0 +1,617 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Cosmica Trial, sans-serif;
+    overflow-x: hidden;
+}
+
+ul,
+li,
+ol,
+button,
+a {
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+    list-style: none;
+    font-family: Cosmica Trial, sans-serif;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* Main styles */
+
+.main {
+    padding-top: 23px;
+    padding-bottom: 53px;
+
+}
+
+.main__container {
+    width: 100%;
+    background-image: url(../img/history/history-img.avif);
+    background-repeat: no-repeat;
+    height: 574px;
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+}
+
+/* History styles */
+
+.history {
+    padding-bottom: 76px;
+}
+
+.history__container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.history__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #F2F3F7;
+    border-radius: 50px;
+    padding: 35px 84px 51px 40px;
+    margin-bottom: 25px;
+}
+
+.history__item-title {
+    font-family: Cosmica Trial, sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    margin-bottom: 14px;
+    line-height: 130%;
+}
+
+.history__item-description {
+    font-family: Cosmica Trial, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    max-width: 558px;
+}
+
+.history__row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    row-gap: 25px;
+}
+
+.history__col {
+    background-color: #F2F3F7;
+    border-radius: 50px;
+    padding: 35px 40px;
+}
+
+.history__images {
+    background-color: #76A5DB;
+    border-radius: 12px;
+    padding: 17.5px;
+    margin-bottom: 25px;
+    object-fit: cover;
+}
+
+.history__col-title {
+    font-family: Cosmica Trial, sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 130%;
+    margin-bottom: 10px;
+}
+
+.history__col-description {
+    font-family: Cosmica Trial, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.history__info-images {
+    max-width: 386px;
+    width: 100%;
+}
+
+
+/* Users styles */
+
+
+.users {
+    padding-top: 15px;
+    padding-bottom: 66px;
+}
+
+.users__container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.users__title {
+    font-family: Cosmica Trial, sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 130%;
+    margin-bottom: 31px;
+}
+
+.users__row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+}
+
+.users__col {
+    background-color: #012548;
+    border-radius: 24px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    max-width: 301px;
+    width: 100%;
+}
+
+.users__images {
+    margin-bottom: 15px;
+    max-width: 239px;
+    width: 100%;
+}
+
+.users__link {
+    font-family: Cosmica Trial, sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 130%;
+    text-align: center;
+    text-decoration: underline;
+    color: white;
+}
+
+.users__link:hover {
+    color: #76A5DB;
+}
+
+/* About styles */
+
+.about {
+    padding-top: 65px;
+    padding-bottom: 70px;
+}
+
+.about__container {
+    max-width: 1022px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.about__containers {
+    max-width: 1324px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.about__images {
+    margin-bottom: 20px;
+    max-width: 982px;
+    width: 100%;
+}
+
+.about__upload-img {
+    max-width: 68px;
+    width: 100%;
+}
+
+.about__title {
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 130%;
+    letter-spacing: 0%;
+    margin-bottom: 15px;
+}
+
+.about__titles {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 130%;
+    color: #ACACAC;
+    margin-bottom: 20px;
+}
+
+.about__description {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 140%;
+    list-style: disc;
+    color: #697583;
+}
+
+.about__description li {
+    list-style: disc;
+    margin-left: 35px;
+}
+
+.about__upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ABABAB;
+    border-radius: 20px;
+    justify-content: center;
+    height: 482px;
+    cursor: pointer;
+    margin-bottom: 22px;
+}
+
+.about__upload-title {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 130%;
+    color: #F0F0F0;
+    margin-top: 2px;
+}
+
+.about__subtitle {
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 32px;
+    line-height: 130%;
+}
+
+.about__text {
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 40px;
+    line-height: 140%;
+}
+
+.about__texts {
+    font-weight: 700;
+    font-size: 19px;
+    color: #697583;
+    margin-bottom: 10px;
+    line-height: 140%;
+}
+
+.about__link {
+    color: black;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.about__links {
+    color: #697583;
+    font-weight: 700;
+    font-size: 19px;
+}
+
+.about__texts:hover {
+    color: #76A5DB;
+}
+
+.about__links:hover {
+    color: #76A5DB;
+}
+
+.about__btn {
+    background: linear-gradient(102.54deg, #09090B 45.59%, #5C5C71 118.14%);
+    border-radius: 14px;
+    padding: 16px 32px;
+    box-shadow: 0px 4px 6px 0px #00000024;
+    max-width: 285px;
+    width: 100%;
+    font-weight: 500;
+    color: white;
+    font-size: 18px;
+    line-height: 130%;
+    text-align: center;
+}
+
+
+/* noNews styles */
+
+.noNews {
+    padding-top: 50px;
+    padding-bottom: 113px;
+}
+
+.noNews__container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.noNews__title {
+    font-family: Cosmica Trial, sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 130%;
+    color: #190A35;
+    margin-bottom: 23px;
+}
+
+.noNews__images {
+    margin: 0 auto;
+    display: flex;
+    max-width: 596px;
+    width: 100%;
+}
+
+.noNews__subtitle {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 130%;
+    text-align: center;
+    margin-bottom: 41px;
+}
+
+.noNews__btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 130%;
+    text-align: center;
+    color: white;
+    background: linear-gradient(102.54deg, #09090B 45.59%, #5C5C71 118.14%);
+    border: none;
+    box-shadow: 0px 4px 6px 0px #00000024;
+    border-radius: 14px;
+    padding: 22px;
+    max-width: 278px;
+    width: 100%;
+    justify-content: center;
+}
+
+@media (max-width:1024px) {
+    .history__info {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .history__item {
+        margin-bottom: 40px;
+    }
+
+    .history__info {
+        border-radius: 25px;
+    }
+
+    .main__container {
+        height: 450px;
+    }
+
+    .history__col {
+        border-radius: 25px;
+    }
+
+    .users__row {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .users__title {
+        font-size: 35px;
+    }
+
+    .about__title {
+        font-size: 38px;
+    }
+}
+
+@media (max-width:768px) {
+    .users__title {
+        font-size: 28px;
+    }
+
+    .users__row {
+        grid-template-columns: 1fr;
+        max-width: 300px;
+    }
+
+    .history__row {
+        grid-template-columns: 1fr;
+    }
+
+    .history__col {
+        padding: 25px;
+    }
+
+    .history__info {
+        padding: 25px;
+        border-radius: 20px;
+    }
+
+    .history__item-title {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+    .history__item-description {
+        font-size: 15px;
+        line-height: 22px;
+    }
+
+    .history__info-images {
+        max-width: 300px;
+    }
+
+    .main__container {
+        height: 400px;
+    }
+
+    .history__col-title {
+        font-size: 35px;
+        margin-bottom: 5px;
+    }
+
+    .history__col-description {
+        font-size: 15px;
+        line-height: 24px;
+    }
+
+    .history__images {
+        padding: 13px;
+        margin-bottom: 20px;
+    }
+
+    .about__title {
+        font-size: 24px;
+    }
+
+    .about__description {
+        font-size: 16px;
+    }
+
+    .about__subtitle {
+        font-size: 28px;
+    }
+
+    .about__text {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
+    .about__link {
+        font-size: 14px;
+    }
+
+    .about__texts {
+        font-size: 14px;
+    }
+
+    .about__links {
+        font-size: 14px;
+        max-width: 100px;
+        text-wrap: wrap;
+    }
+
+    .about {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .about__upload {
+        height: 350px;
+    }
+
+    .about__upload-img {
+        max-width: 55px;
+    }
+
+    .about__upload-title {
+        font-size: 28px;
+    }
+
+    .about__titles {
+        font-size: 44px;
+    }
+    .noNews__title {
+        font-size: 28px;
+    }
+    .noNews__subtitle {
+        font-size: 23px;
+    }
+    .noNews {
+        padding-top: 30px;
+        padding-bottom: 50px;
+    }
+}
+
+@media (max-width:440px) {
+    .history__info-images {
+        max-width: 230px;
+    }
+
+    .history__info {
+        padding: 20px;
+    }
+
+    .main__container {
+        height: 320px;
+    }
+
+    .history__item-title {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    .history__item-description {
+        font-size: 13px;
+        line-height: 20px;
+    }
+
+    .history__item {
+        margin-bottom: 25px;
+    }
+
+    .about__description {
+        font-size: 14px;
+    }
+
+}
+
+@media (max-width:340px) {
+    .history__item-title {
+        font-size: 26px;
+        margin-bottom: 10px;
+    }
+
+
+    .history__item-description {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .history__images {
+        padding: 10px;
+    }
+
+    .history__col {
+        padding: 20px;
+    }
+
+    .users__title {
+        font-size: 30px;
+    }
+
+    .about__text {
+        font-size: 13px;
+        margin-bottom: 30px;
+    }
+
+    .about__link {
+        font-size: 13px;
+    }
+
+    .about__texts {
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+
+    .about__links {
+        font-size: 13px;
+    }
+}

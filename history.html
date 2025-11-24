@@ -5,19 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IAAOC</title>
+
     <link rel="icon" href="./img/logoHead.avif">
-    <!-- <link rel="stylesheet" href="./css/main.css" media="print" onload="this.media='all'" />
-    <noscript>
-        <link rel="stylesheet" href="./css/main.css" />
-    </noscript> -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/history.css">
     <link rel="stylesheet" href="./css/modal.css">
 </head>
 
 <body>
-    
     <div id="thankYouModal" class="modal-overlay" style="display: none;">
         <div class="modal-content">
             <div class="modal-header">
@@ -82,11 +77,13 @@
                 </a>
             </div>
             <ul class="header__nav">
-                <li class="header__nav-item"><a href="#goal" class="header__nav-link">Assotsiatsiya haqida</a></li>
-                <li class="header__nav-item"><a href="#management" class="header__nav-link">Ta’sischilar</a></li>
-                <li class="header__nav-item"><a href="#benefits" class="header__nav-link">Hujjatlar</a></li>
-                <li class="header__nav-item"><a href="#news" class="header__nav-link">Shartlar</a></li>
+                <li class="header__nav-item"><a href="#hero" class="header__nav-link">Biz haqimizda</a></li>
+                <li class="header__nav-item"><a href="#management" class="header__nav-link">Assotsiatsiya tarixi</a>
+                </li>
+                <li class="header__nav-item"><a href="#benefits" class="header__nav-link">Kengash</a></li>
+                <li class="header__nav-item"><a href="#members" class="header__nav-link">Azo’lar va Imtiyozlar</a></li>
                 <li class="header__nav-item"><a href="#news" class="header__nav-link">Yangiliklar</a></li>
+            </ul>
             </ul>
             <div class="header__actions">
                 <button class="header__lang-btn">
@@ -100,7 +97,7 @@
                         <li class="header__lang-item">English</li>
                     </ul>
                 </button>
-                <button class="header__join-btn custom__btn open__modal">Shaxsiy kabinetga kirish</button>
+                <button class="header__join-btn custom__btn open__modal">Shaxsiy kabinet</button>
                 <button class="hamburger__open-btn" id="hamburgerOpen">
                     <svg width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1 1.45703H17M1 7.45703H17M1 13.457H17" stroke="black" stroke-width="2"
@@ -162,207 +159,84 @@
     </div>
 
 
-    <section class="personal">
-        <div class="personal__container">
-            <h2 class="personal__title">Zafar Hoshimov</h2>
-            <h3 class="personal__subtitle">Shaxsiy kabinetga xush kelibsiz!</h3>
+    <section class="main">
+        <div class="main__container">
         </div>
     </section>
 
 
-    <section class="list">
-        <div class="list__container">
-            <h2 class="list__title">Qora ro’yxat</h2>
-            <p class="list__description">Sohamizdagi firibgar insonlar, kompaniya va agentliklar</p>
-
-            <div class="list__box">
-                <div class="list__col accordion-header">
-                    <h3 class="list__col-title">Ishonchsiz xodimlar</h3>
-                    <img class="arrow-icon" src="./img/personal-arrow.svg" loading="lazy" alt="personal arrow">
+    <section class="history">
+        <div class="history__container">
+            <div class="history__info">
+                <div class="history__item">
+                    <h3 class="history__item-title">Assotsatsiya tarixi</h3>
+                    <p class="history__item-description">Tajribasi bo‘lishiga qaramay, ko‘plab mutaxassislar yordam,
+                        maslahat va hamjamiyat topolmay
+                        qiynalayotganini ko‘rdik. Ana shu ehtiyoj bizni birlashtirdi.</p>
+                    <br>
+                    <p class="history__item-description"> Bir guruh fidoyi mutaxassislar bir joyga yig‘ilib, o‘rganish,
+                        fikr almashish va o‘zaro
+                        qo‘llab-quvvatlash uchun yopiq Assotsatsiya yaratdi. Shu tariqa hamkamiyatimiz tarixi ham
+                        boshlandi.</p>
                 </div>
-
-                <div class="accordion-content">
-                    <table>
-                        <tr class="accardion-tr">
-                            <th>F.I.SH</th>
-                            <th>Sababi</th>
-                        </tr>
-
-                        <tr>
-                            <td class="cell-with-image">
-                                Ergashev Otabek Zafar o’g’li
-                            </td>
-                            <td>Deadline ga amal qilmaydi. Topshirilgan vazifalar doimiy kechikadi</td>
-                        </tr>
-
-                        <tr class="wwww">
-                            <td class="cell-with-image">
-                                Ergashev Otabek Zafar o’g’li
-                            </td>
-                            <td>Deadline ga amal qilmaydi. Topshirilgan vazifalar doimiy kechikadi</td>
-                        </tr>
-
-                        <tr>
-                            <td class="cell-with-image">
-                                Ergashev Otabek Zafar o’g’li
-                            </td>
-                            <td>Deadline ga amal qilmaydi. Topshirilgan vazifalar doimiy kechikadi</td>
-                        </tr>
-
-                        <tr class="wwww">
-                            <td class="cell-with-image wwww" colspan="2">
-                                Ergashev Otabek Zafar o’g’li
-                            </td>
-                            <td>
-                                Deadline ga amal qilmaydi. Topshirilgan vazifalar doimiy kechikadi. Deadline ga amal
-                                <br>
-                                qilmaydi. Topshirilgan vazifalar doimiy kechikadi. Deadline ga amal qilmaydi. <br>
-                                Topshirilgan vazifalar doimiy kechikadi
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td class="cell-with-image">
-                                Ergashev Otabek Zafar o’g’li
-                            </td>
-                            <td>Deadline ga amal qilmaydi. Topshirilgan vazifalar doimiy kechikadi</td>
-                        </tr>
-
-                    </table>
-                </div>
+                <img class="history__info-images" src="./img/history/logo.png" loading="lazy" alt="history logo">
             </div>
-            <div class="list__box">
-                <div class="list__col accordion-header">
-                    <h3 class="list__col-title">Firibgar kompaniyalar</h3>
-                    <img class="arrow-icon" src="./img/personal-arrow.svg" loading="lazy" alt="personal arrow">
+
+            <div class="history__row">
+                <div class="history__col">
+                    <img class="history__images" src="./img/history/1.avif" loading="lazy" alt="history icons">
+
+                    <h3 class="history__col-title">Shaffoflik</h3>
+                    <p class="history__col-description">Biz haqiqatni yashirmaymiz. Hammasi ochiq, aniq va tushunarli.
+                        Ishonchli hodimlar jamoasi shu yerda.</p>
                 </div>
+                <div class="history__col">
+                    <img class="history__images" src="./img/history/2.avif" loading="lazy" alt="history icons">
 
-                <div class="accordion-content">
-                    <table>
-                        <tr>
-                            <th>F.I.SH</th>
-                            <th>Sababi</th>
-                        </tr>
-
-                        <tr>
-                            <td class="cell-with-image">
-                                Ergashev Otabek Zafar o’g’li
-                            </td>
-                            <td>Deadline ga amal qilmaydi. Topshirilgan vazifalar doimiy kechikadi</td>
-                        </tr>
-
-                        <tr class="wwww">
-                            <td class="cell-with-image">
-                                Ergashev Otabek Zafar o’g’li
-                            </td>
-                            <td>Deadline ga amal qilmaydi. Topshirilgan vazifalar doimiy kechikadi</td>
-                        </tr>
-
-                        <tr>
-                            <td class="cell-with-image">
-                                Ergashev Otabek Zafar o’g’li
-                            </td>
-                            <td>Deadline ga amal qilmaydi. Topshirilgan vazifalar doimiy kechikadi</td>
-                        </tr>
-
-                        <tr class="wwww">
-                            <td class="cell-with-image wwww" colspan="2">
-                                Ergashev Otabek Zafar o’g’li
-                            </td>
-                            <td>
-                                Deadline ga amal qilmaydi. Topshirilgan vazifalar doimiy kechikadi. Deadline ga amal
-                                <br>
-                                qilmaydi. Topshirilgan vazifalar doimiy kechikadi. Deadline ga amal qilmaydi. <br>
-                                Topshirilgan vazifalar doimiy kechikadi
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td class="cell-with-image">
-                                Ergashev Otabek Zafar o’g’li
-                            </td>
-                            <td>Deadline ga amal qilmaydi. Topshirilgan vazifalar doimiy kechikadi</td>
-                        </tr>
-
-                    </table>
+                    <h3 class="history__col-title">Halollik</h3>
+                    <p class="history__col-description">Biz uchun ishonch muhim. Inson o‘zini yolg‘iz his qilmay, jamoa bilan rivojlansa — biz o‘z vazifamizni bajargan bo‘lamiz.</p>
                 </div>
-            </div>
-            <div class="list__box">
-                <div class="list__col accordion-header">
-                    <h3 class="list__col-title">Ishonchsiz Agentliklar </h3>
-                    <img class="arrow-icon" src="./img/personal-arrow.svg" loading="lazy" alt="personal arrow">
+                <div class="history__col">
+                    <img class="history__images" src="./img/history/3.avif" loading="lazy" alt="history icons">
+
+                    <h3 class="history__col-title">Rivojlanish</h3>
+                    <p class="history__col-description">Biz az'olarimiz bilan birgalikda yangi bilimlar o'rganishga va doimo  bir qadam oldinda bo'lishlarini ta'minlaymiz.</p>
                 </div>
+                <div class="history__col">
+                    <img class="history__images" src="./img/history/4.avif" loading="lazy" alt="history icons">
 
-                <div class="accordion-content">
-                    <table>
-                        <tr>
-                            <th>F.I.SH</th>
-                            <th>Sababi</th>
-                        </tr>
-
-                        <tr>
-                            <td class="cell-with-image">
-                                Ergashev Otabek Zafar o’g’li
-                            </td>
-                            <td>Deadline ga amal qilmaydi. Topshirilgan vazifalar doimiy kechikadi</td>
-                        </tr>
-
-                        <tr class="wwww">
-                            <td class="cell-with-image">
-                                Ergashev Otabek Zafar o’g’li
-                            </td>
-                            <td>Deadline ga amal qilmaydi. Topshirilgan vazifalar doimiy kechikadi</td>
-                        </tr>
-
-                        <tr>
-                            <td class="cell-with-image">
-                                Ergashev Otabek Zafar o’g’li
-                            </td>
-                            <td>Deadline ga amal qilmaydi. Topshirilgan vazifalar doimiy kechikadi</td>
-                        </tr>
-
-                        <tr class="wwww">
-                            <td class="cell-with-image wwww" colspan="2">
-                                Ergashev Otabek Zafar o’g’li
-                            </td>
-                            <td>
-                                Deadline ga amal qilmaydi. Topshirilgan vazifalar doimiy kechikadi. Deadline ga amal
-                                <br>
-                                qilmaydi. Topshirilgan vazifalar doimiy kechikadi. Deadline ga amal qilmaydi. <br>
-                                Topshirilgan vazifalar doimiy kechikadi
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td class="cell-with-image">
-                                Ergashev Otabek Zafar o’g’li
-                            </td>
-                            <td>Deadline ga amal qilmaydi. Topshirilgan vazifalar doimiy kechikadi</td>
-                        </tr>
-
-                    </table>
+                    <h3 class="history__col-title">Himoya</h3>
+                    <p class="history__col-description">Har bir a’zoning huquqi, mehnati va qadrini himoya qilish bizning eng katta mas’uliyatimiz.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="noNews">
-        <div class="noNews__container">
-            <h2 class="noNews__title">Mening yangiliklarim</h2>
-            <img class="noNews__images" src="./img/noNews.avif" loading="lazy" alt="noNews">
-            <h3 class="noNews__subtitle">Sizda hali yangiliklar yo’q </h3>
 
-            <button class="noNews__btn">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="24" height="24" rx="5" fill="white" />
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M14.7719 7.31507C14.9737 7.11333 15.2474 7 15.5327 7C15.8181 7 16.0917 7.11333 16.2935 7.31507L17.6849 8.70647C17.8867 8.90827 18 9.18193 18 9.46728C18 9.75262 17.8867 10.0263 17.6849 10.2281L16.8316 11.0814L13.9186 8.16842L14.7719 7.31507ZM13.1578 8.92922L8.3153 13.7717C8.11348 13.9735 8.00006 14.2471 8 14.5325V15.9239C8 16.2093 8.11337 16.483 8.31518 16.6848C8.51699 16.8866 8.7907 17 9.0761 17H10.4675C10.7529 16.9999 11.0265 16.8865 11.2283 16.6847L16.0708 11.8422L13.1578 8.92922Z"
-                        fill="black" />
-                </svg>
-                Yangilik qo’shish
-            </button>
+    <section class="users">
+        <div class="users__container">
+            <h3 class="users__title">Assotsatmiyamiz a’zolarining loyihalari:</h3>
+            <div class="users__row">
+                <div class="users__col">
+                    <img class="users__images" src="./img/history/project1.png" loading="lazy" alt="img">
+                    <a class="users__link" href="#">Turan Os</a>
+                </div>
+                <div class="users__col">
+                    <img class="users__images" src="./img/history/project2.avif" loading="lazy" alt="img">
+                    <a class="users__link" href="#">ATB Accounting Consult</a>
+                </div>
+                <div class="users__col">
+                    <img class="users__images" src="./img/history/project3.avif" loading="lazy" alt="img">
+                    <a class="users__link" href="#">TA-VAT consulting </a>
+                </div>
+                <div class="users__col">
+                    <img class="users__images" src="./img/history/project4.png" loading="lazy" alt="img">
+                    <a class="users__link" href="#">Grossbook</a>
+                </div>
+            </div>
         </div>
     </section>
+
 
     <footer class="footer">
         <div class="footer__container">
@@ -448,11 +322,10 @@
                 </div>
             </div>
             <div class="footer__bottom">
-                <p class="footer__copyright"><span>© </span> 2025. Barcha huquqlar himoyalangan</p>
+                <p class="footer__copyright">2025. Barcha huquqlar himoyalangan</p>
             </div>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script defer src="./js/app.js"></script>
     <script defer src="./js/ariza.js"></script>
     <script defer src="./js/modal.js"></script>

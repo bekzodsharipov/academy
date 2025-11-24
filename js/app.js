@@ -237,3 +237,28 @@ accordions.forEach(box => {
     }
   });
 });
+
+
+
+
+
+
+const filter = document.querySelector(".news-filter");
+const head = filter.querySelector(".news-filter__head");
+const body = filter.querySelector(".news-filter__body");
+const items = filter.querySelectorAll(".news-filter__item");
+
+head.addEventListener("click", () => {
+    filter.classList.toggle("open");
+});
+
+items.forEach((item) => {
+    item.addEventListener("click", () => {
+        items.forEach(i => i.classList.remove("news-filter__item--active"));
+        item.classList.add("news-filter__item--active");
+
+        head.querySelector("span").textContent = item.textContent.trim();
+
+        filter.classList.remove("open");
+    });
+});
