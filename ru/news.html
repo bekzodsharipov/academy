@@ -5,24 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IAAOC</title>
-    <link rel="icon" href="./img/logoHead.avif">
+    <link rel="icon" href="../img/logoHead.avif">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/modal.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/modal.css">
 </head>
 
 <body data-page="news">
 
+
     <div id="thankYouModal" class="modal-overlay" style="display: none;">
         <div class="modal-content">
             <div class="modal-header">
-                <h2>Rahmat!</h2>
+                <h2>Спасибо!</h2>
                 <button class="close-btn" onclick="closeThankYouModal()">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="success-icon">✓</div>
-                <p>Ma'lumotlaringiz muvaffaqiyatli yuborildi.</p>
-                <p>Tez orada siz bilan bog'lanamiz.</p>
+                <p>Ваши данные успешно отправлены.</p>
+                <p>Мы свяжемся с вами в ближайшее время.</p>
             </div>
             <div class="modal-footer">
                 <button class="ok-btn" onclick="closeThankYouModal()">OK</button>
@@ -34,26 +36,26 @@
         <div class="header__container">
             <div class="header__logo">
                 <a href="./index.html" class="header__logo-link">
-                    <img src="./img/logo.avif" alt="logo" width="181" height="63" loading="lazy"
+                    <img src="../img/logo.avif" alt="logo" width="181" height="63" loading="lazy"
                         class="header__logo-img">
-                    <span class="header__logo-text">Tajribalarni birlashtirib <br>
-                        - Ishonchni oshiramiz</span>
+                    <span class="header__logo-text">Объединяем опыт <br>
+                        — укрепляем доверие</span>
                 </a>
             </div>
             <ul class="header__nav">
-                <li class="header__nav-item"><a href="#hero" class="header__nav-link">Biz haqimizda</a></li>
-                <li class="header__nav-item"><a href="./history.html" class="header__nav-link">Assotsiatsiya tarixi</a>
+                <li class="header__nav-item"><a href="#hero" class="header__nav-link">О нас</a></li>
+                <li class="header__nav-item"><a href="./history.html" class="header__nav-link">История ассоциации</a>
                 </li>
-                <li class="header__nav-item"><a href="#management" class="header__nav-link">Kengash</a></li>
-                <li class="header__nav-item"><a href="#benefits" class="header__nav-link">Azo’lar va Imtiyozlar</a></li>
-                <li class="header__nav-item"><a href="./news.html" class="header__nav-link">Yangiliklar</a></li>
+                <li class="header__nav-item"><a href="#management" class="header__nav-link">Совет</a></li>
+                <li class="header__nav-item"><a href="#benefits" class="header__nav-link">Члены и привилегии</a></li>
+                <li class="header__nav-item"><a href="./news.html" class="header__nav-link">Новости</a></li>
             </ul>
             <div class="header__actions">
                 <button class="header__lang-btn" type="button">
-                    <img src="./img/world.svg" alt="world" class="header__lang-icon" width="20" height="20"
+                    <img src="../img/world.svg" alt="world" class="header__lang-icon" width="20" height="20"
                         loading="lazy">
-                    <p class="header__lang-text">O'zbekcha</p>
-                    <img src="./img/chevron-down.svg" alt="arrow" class="header__lang-arrow" width="20" height="20"
+                    <p class="header__lang-text">Узбекский</p>
+                    <img src="../img/chevron-down.svg" alt="arrow" class="header__lang-arrow" width="20" height="20"
                         loading="lazy">
                     <ul class="header__lang-menu">
                     </ul>
@@ -73,7 +75,7 @@
         <div class="hamburger__menu" id="hamburgerMenu">
             <div class="hamburger__header">
                 <div class="hamburger__logo">
-                    <img src="./img/logo.avif" alt="logo" width="120" height="42" loading="lazy">
+                    <img src="../img/logo.avif" alt="logo" width="120" height="42" loading="lazy">
                 </div>
                 <button class="hamburger__close-btn" id="hamburgerClose">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -86,17 +88,20 @@
             <nav class="hamburger__nav">
                 <ul class="hamburger__nav-list">
                     <li class="hamburger__nav-item">
-                        <a href="#goal" class="hamburger__nav-link">Assotsiatsiya haqida</a>
+                        <a href="#hero" class="hamburger__nav-link">О нас</a>
+                    </li>
+                    <li class="hamburger__nav-item">
+                        <a href="./history.html" class="hamburger__nav-link">История ассоциации</a>
                     </li>
 
                     <li class="hamburger__nav-item">
-                        <a href="#management" class="hamburger__nav-link">Kengash</a>
+                        <a href="#management" class="hamburger__nav-link">Совет</a>
                     </li>
                     <li class="hamburger__nav-item">
-                        <a href="#benefits" class="hamburger__nav-link">Azo’lar va Imtiyozlar</a>
+                        <a href="#benefits" class="hamburger__nav-link">Члены и привилегии</a>
                     </li>
                     <li class="hamburger__nav-item">
-                        <a href="#news" class="hamburger__nav-link">Yangiliklar</a>
+                        <a href="./news.html" class="hamburger__nav-link">Новости</a>
                     </li>
 
                 </ul>
@@ -105,16 +110,16 @@
             <div class="hamburger__actions">
                 <div class="hamburger__lang-selector">
                     <button class="hamburger__lang-btn">
-                        <img src="./img/world.svg" alt="world" width="20" height="20">
-                        <span>O'zbekcha</span>
-                        <img src="./img/chevron-down.svg" alt="arrow" width="16" height="16">
+                        <img src="../img/world.svg" alt="world" width="20" height="20">
+                        <span>Узбекский</span>
+                        <img src="../img/chevron-down.svg" alt="arrow" width="16" height="16">
                         <ul class="hamburger__lang-menu">
                             <li class="hamburger__lang-item">Русский</li>
                             <li class="hamburger__lang-item">English</li>
                         </ul>
                     </button>
                 </div>
-                <a href="#app" class="hamburger__join-btn">A'zo bo'lish</a>
+                <a href="#app" class="hamburger__join-btn">Стать членом</a>
             </div>
         </div>
     </div>
@@ -122,36 +127,32 @@
     <section id="news" class="news">
         <div class="news__container">
             <div class="news__boxss">
-                <h2 class="news__titles">Eng so’ngilari</h2>
+                <h2 class="news__titles">Самые последние</h2>
                 <div class="news-filter">
                     <div class="news-filter__head">
-                        <span>Filtrlash</span>
+                        <span>Фильтрация</span>
                     </div>
                     <div class="news-filter__body">
                         <div class="news-filter__item news-filter__item--active">
-                            Eng so’ngilari
+                            Самые последние
                         </div>
                         <div class="news-filter__item">
-                            Barchasi
+                            Все
                         </div>
                     </div>
                 </div>
-
             </div>
 
 
             <div class="news__list">
                 <div class="news__item">
                     <a href="#" class="news__item-link">
-                        <img class="news__item-image" src="./img/news/1.avif" alt="build" width="381" height="258"
+                        <img class="news__item-image" src="../img/news/1.avif" alt="build" width="381" height="258"
                             loading="lazy">
-                        <h3 class="news__item-title">Ommaviy Axborot Vositalari
-                            biz haqimizda</h3>
+                        <h3 class="news__item-title">Средства массовой информации о нас</h3>
                     </a>
-                    <p class="news__item-text">O‘zbekistonda xalqaro buxgalteriya autsorsing
-                        kompaniyalari uyushmasi o‘z
-                        faoliyatini boshladi. Uyushma buxgalteriya autsorsing bozoridagi kompaniyalarni
-                        birlashtirib...
+                    <p class="news__item-text">В Узбекистане начала работу международная ассоциация бухгалтерского
+                        аутсорсинга. Ассоциация объединяет компании на рынке бухгалтерского аутсорсинга...
                     </p>
                     <p class="news__item-date">
                         <span class="news__item-date-icon">
@@ -163,18 +164,17 @@
                                     stroke-linejoin="round" />
                             </svg>
                         </span>
-                        23-Oktabr, 18:23
+                        23 октября, 18:23
                     </p>
                 </div>
                 <div class="news__item">
                     <a href="#" class="news__item-link">
-                        <img class="news__item-image" src="./img/news/2.avif" alt="build" width="381" height="258"
+                        <img class="news__item-image" src="../img/news/2.avif" alt="build" width="381" height="258"
                             loading="lazy">
-                        <h3 class="news__item-title">Raqamli buxgalteriya tizimi kengaymoqda</h3>
+                        <h3 class="news__item-title">Расширяется система цифровой бухгалтерии</h3>
                     </a>
-                    <p class="news__item-text">O‘zbekistonda kop kompaniyalar “1C: Buxgalteriya 8” va UzAsbo
-                        kabi
-                        dasturlar orqali hisob-kitob va soliq hisobotlarini avtomatlashtirishga o‘tmoqda
+                    <p class="news__item-text">Во многих компаниях Узбекистана бухгалтерский учет и налоговая отчетность
+                        переходят на автоматизацию с использованием программ «1C: Бухгалтерия 8» и UzAsbo
                     </p>
                     <p class="news__item-date">
                         <span class="news__item-date-icon">
@@ -186,21 +186,19 @@
                                     stroke-linejoin="round" />
                             </svg>
                         </span>
-                        25-Oktabr, 09:00
+                        25 октября, 09:00
                     </p>
                 </div>
                 <div class="news__item">
                     <a href="#" class="news__item-link">
-                        <img class="news__item-image" src="./img/news/3.avif" alt="build" width="381" height="258"
+                        <img class="news__item-image" src="../img/news/3.avif" alt="build" width="381" height="258"
                             loading="lazy">
-                        <h3 class="news__item-title">Xorijiy fuqarolar uchun soliq rejimi joriy etiladi</h3>
+                        <h3 class="news__item-title">Вводится налоговый режим для иностранных граждан</h3>
                     </a>
 
-                    <p class="news__item-text">2026 yil 1 yanvardan boshlab O‘zbekistonda xorijiy shaxslar uchun
-                        soliq
-                        tizimida maxsus rejim joriy etiladi — chetdan tushgan daromadlardan shaxsiy daromad
-                        solig‘i
-                        olinmaydi...</p>
+                    <p class="news__item-text">С 1 января 2026 года в Узбекистане будет введён специальный налоговый
+                        режим для иностранных лиц — налог на доходы физических лиц с поступлений из-за рубежа взиматься
+                        не будет...</p>
                     <p class="news__item-date">
                         <span class="news__item-date-icon">
                             <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
@@ -211,7 +209,7 @@
                                     stroke-linejoin="round" />
                             </svg>
                         </span>
-                        10-Oktyabr, 10:10
+                        10 октября, 10:10
                     </p>
                 </div>
             </div>
@@ -222,31 +220,31 @@
         <div class="footer__container">
             <div class="footer__brand">
                 <a class="footer__logo-link" href="#">
-                    <img class="footer__logo" src="./img/footlogo.avif" alt="logo" width="163" height="50"
+                    <img class="footer__logo" src="../img/footlogo.avif" alt="logo" width="163" height="50"
                         loading="lazy">
                 </a>
                 <ul class="footer__social-list">
                     <li class="footer__social-item">
                         <a class="footer__social-link" target="_blank" href="#">
-                            <img class="footer__social-icon" src="./img/footer/telegram.svg" alt="social media icon"
+                            <img class="footer__social-icon" src="../img/footer/telegram.svg" alt="social media icon"
                                 width="32" height="32" loading="lazy">
                         </a>
                     </li>
                     <li class="footer__social-item">
                         <a class="footer__social-link" target="_blank" href="#">
-                            <img class="footer__social-icon" src="./img/footer/instagram.svg" alt="social media icon"
+                            <img class="footer__social-icon" src="../img/footer/instagram.svg" alt="social media icon"
                                 width="32" height="32" loading="lazy">
                         </a>
                     </li>
                     <li class="footer__social-item">
                         <a class="footer__social-link" target="_blank" href="#">
-                            <img class="footer__social-icon" src="./img/footer/youtube.svg" alt="social media icon"
+                            <img class="footer__social-icon" src="../img/footer/youtube.svg" alt="social media icon"
                                 width="32" height="32" loading="lazy">
                         </a>
                     </li>
                     <li class="footer__social-item">
                         <a class="footer__social-link" target="_blank" href="#">
-                            <img class="footer__social-icon" src="./img/footer/facebook.svg" alt="social media icon"
+                            <img class="footer__social-icon" src="../img/footer/facebook.svg" alt="social media icon"
                                 width="32" height="32" loading="lazy">
                         </a>
                     </li>
@@ -255,16 +253,16 @@
             <div class="footer__content">
                 <div class="footer__links">
                     <ul class="footer__links-list">
-                        <li class="footer__links-item"><a class="footer__link" href="#goal">Assotsiatsiya haqida</a>
+                        <li class="footer__links-item"><a class="footer__link" href="#goal">Об ассоциации</a>
                         </li>
-                        <li class="footer__links-item"><a class="footer__link" href="#management">Kengash</a></li>
-                        <li class="footer__links-item"><a class="footer__link" href="#benefits">Azo’lar va
-                                Imtiyozlar</a></li>
-                        <li class="footer__links-item"><a class="footer__link" href="#news">Yangiliklar</a></li>
+                        <li class="footer__links-item"><a class="footer__link" href="#management">Совет</a></li>
+                        <li class="footer__links-item"><a class="footer__link" href="#benefits">Члены и привилегии</a>
+                        </li>
+                        <li class="footer__links-item"><a class="footer__link" href="#news">Новости</a></li>
                     </ul>
 
-                    <p class="footer__description">Buxgalteriya autsorsing kompaniyalarini bir joyga to‘plab,
-                        professional va ishonchli tizim yaratadigan uyushma.</p>
+                    <p class="footer__description">Ассоциация, объединяющая бухгалтерские аутсорсинговые компании и
+                        создающая профессиональную и надежную систему.</p>
                 </div>
                 <div class="footer__contact">
                     <ul class="footer__contact-list">
@@ -281,7 +279,7 @@
                                             stroke-linejoin="round" />
                                     </svg>
                                 </span>
-                                Toshkent shahri Chilonzor tumani “ц” kvartal 7/1 
+                                Город Ташкент, Чиланзарский район, квартал «Ц», дом 7/1
                             </a>
                         </li>
                         <li class="footer__contact-item">
@@ -302,7 +300,7 @@
                 </div>
             </div>
             <div class="footer__bottom">
-                <p class="footer__copyright">2025. Barcha huquqlar himoyalangan</p>
+                <p class="footer__copyright">2025. Все права защищены</p>
             </div>
         </div>
     </footer>
@@ -333,10 +331,10 @@
             });
         });
     </script>
-    <script defer src="./js/app.js"></script>
-    <script defer src="./js/ariza.js"></script>
-    <script defer src="./js/modal.js"></script>
-    <script defer src="./js/question.js"></script>
+    <script defer src="../js/app.js"></script>
+    <script defer src="../js/ariza.js"></script>
+    <script defer src="../js/modal.js"></script>
+    <script defer src="../js/question.js"></script>
 </body>
 
 </html>

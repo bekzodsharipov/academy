@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IAAOC</title>
+    <link rel="icon" href="../img/logoHead.avif">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/modal.css">
+</head>
+
+<body data-page="index">
+    <div id="thankYouModal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Спасибо!</h2>
+                <button class="close-btn" onclick="closeThankYouModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="success-icon">✓</div>
+                <p>Ваши данные успешно отправлены.</p>
+                <p>Мы свяжемся с вами в ближайшее время.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="ok-btn" onclick="closeThankYouModal()">OK</button>
+            </div>
+        </div>
+    </div>
+    <!-- modal  -->
+    <div class="modal__overlay"></div>
+    <div class="padding">
+        <div class="modal__sign">
+            <div class="modal__sign-content">
+                <img src="../img/modal_logo.avif" alt="logo" width="163" height="50" loading="lazy"
+                    class="modal__sign-logo">
+                <h2 class="modal__sign-title">Сообщество для компаний бухгалтерского аутсорсинга</h2>
+                <img src="../img/modal-banner.avif" alt="banner" loading="lazy" class="modal__sign-banner">
+            </div>
+            <div class="modal__sign-form-block">
+                <div class="modal__sign-form-header">
+                    <p class="modal__sign-form-title">Регистрация</p>
+                    <button class="modal__sign-close-btn modal__close">
+                        <img src="../img/x.svg" width="24" height="24" loading="lazy" alt="x"
+                            class="modal__sign-close-icon">
+                    </button>
+                </div>
+                <div class="modal__infos">
+                    <h3 class="modal__title">Чтобы мы могли полностью с вами познакомиться, нажмите кнопку ниже и
+                        заполните Google-форму </h3>
+                    <img class="modal__img" src="../img/arrow.svg" loading="lazy" width="47" height="18"
+                        alt="arrow icon">
+                    <a class="modal__btn" href="./personal.html">
+                        Заполнить форму
+                    </a>
+                </div>
+
+                <div class="success-message hidden" id="successMessage">
+                    <h2>Успешно!</h2>
+                    <p>Ваши данные успешно отправлены. Мы свяжемся с вами в ближайшее время!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal  -->
+
+    <header class="header">
+        <div class="header__container">
+            <div class="header__logo">
+                <a href="./index.html" class="header__logo-link">
+                    <img src="../img/logo.avif" alt="logo" width="181" height="63" loading="lazy"
+                        class="header__logo-img">
+                    <span class="header__logo-text">Объединяем опыт <br>
+                        — укрепляем доверие</span>
+                </a>
+            </div>
+            <ul class="header__nav">
+                <li class="header__nav-item"><a href="#hero" class="header__nav-link">О нас</a></li>
+                <li class="header__nav-item"><a href="./history.html" class="header__nav-link">История ассоциации</a>
+                </li>
+                <li class="header__nav-item"><a href="#management" class="header__nav-link">Совет</a></li>
+                <li class="header__nav-item"><a href="#benefits" class="header__nav-link">Члены и привилегии</a></li>
+                <li class="header__nav-item"><a href="./news.html" class="header__nav-link">Новости</a></li>
+            </ul>
+            <div class="header__actions">
+                <button class="header__lang-btn" type="button">
+                    <img src="../img/world.svg" alt="world" class="header__lang-icon" width="20" height="20"
+                        loading="lazy">
+                    <p class="header__lang-text">Узбекский</p>
+                    <img src="../img/chevron-down.svg" alt="arrow" class="header__lang-arrow" width="20" height="20"
+                        loading="lazy">
+                    <ul class="header__lang-menu">
+                    </ul>
+                </button>
+
+                <button class="hamburger__open-btn" id="hamburgerOpen">
+                    <svg width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1.45703H17M1 7.45703H17M1 13.457H17" stroke="black" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="hamburger__overlay" id="hamburgerOverlay">
+        <div class="hamburger__menu" id="hamburgerMenu">
+            <div class="hamburger__header">
+                <div class="hamburger__logo">
+                    <img src="../img/logo.avif" alt="logo" width="120" height="42" loading="lazy">
+                </div>
+                <button class="hamburger__close-btn" id="hamburgerClose">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+
+            <nav class="hamburger__nav">
+                <ul class="hamburger__nav-list">
+                    <li class="hamburger__nav-item">
+                        <a href="#hero" class="hamburger__nav-link">О нас</a>
+                    </li>
+                    <li class="hamburger__nav-item">
+                        <a href="./history.html" class="hamburger__nav-link">История ассоциации</a>
+                    </li>
+
+                    <li class="hamburger__nav-item">
+                        <a href="#management" class="hamburger__nav-link">Совет</a>
+                    </li>
+                    <li class="hamburger__nav-item">
+                        <a href="#benefits" class="hamburger__nav-link">Члены и привилегии</a>
+                    </li>
+                    <li class="hamburger__nav-item">
+                        <a href="./news.html" class="hamburger__nav-link">Новости</a>
+                    </li>
+
+                </ul>
+            </nav>
+
+            <div class="hamburger__actions">
+                <div class="hamburger__lang-selector">
+                    <button class="hamburger__lang-btn">
+                        <img src="../img/world.svg" alt="world" width="20" height="20">
+                        <span>Узбекский</span>
+                        <img src="../img/chevron-down.svg" alt="arrow" width="16" height="16">
+                        <ul class="hamburger__lang-menu">
+                            <li class="hamburger__lang-item">Русский</li>
+                            <li class="hamburger__lang-item">English</li>
+                        </ul>
+                    </button>
+                </div>
+                <a href="#app" class="hamburger__join-btn">Стать членом</a>
+            </div>
+        </div>
+    </div>
+
+    <section class="hero" id="hero">
+        <div class="hero__container">
+            <div class="hero__content">
+                <p class="hero__rating">⭐️ 4.9 — средний рейтинг</p>
+                <h1 class="hero__title">Объединяя наш опыт, мы укрепляем доверие!</h1>
+                <p class="hero__description">Ассоциация, объединяющая бухгалтерские аутсорсинговые компании и создающая
+                    профессиональную и надежную систему</p>
+                <button class="hero__button custom__btn open__modal">Регистрация</button>
+                <div class="hero__stats">
+                    <div class="hero__stat">
+                        <h3 class="hero__stat-number">100+</h3>
+                        <p class="hero__stat-text">Количество специалистов в нашей команде</p>
+                    </div>
+                    <div class="hero__stat">
+                        <h3 class="hero__stat-number">3+ лет</h3>
+                        <p class="hero__stat-texts">Компании со средним опытом работы более 3 лет</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="hero__image-box">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img class="hero__image" src="../img/hero.avif" alt="hero" width="551"
+                                height="478" loading="lazy"></div>
+                        <div class="swiper-slide"><img class="hero__image" src="../img/hero-img2.avif" alt="hero"
+                                width="551" height="478" loading="lazy"></div>
+                        <div class="swiper-slide"><img class="hero__image" src="../img/hero-img3.avif" alt="hero"
+                                width="551" height="478" loading="lazy"></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="goal" class="goal">
+        <div class="goal__container">
+            <div class="goal__content">
+                <h2 class="goal__title">Миссия и цели нашей ассоциации
+                    <img class="goal__img" src="../img/highlight.avif" loading="lazy" alt="highlight">
+                </h2>
+                <p class="goal__description"><span>Наша миссия </span> <b>—</b> Объединить компании, занимающиеся
+                    бухгалтерским аутсорсингом, развивать их сотрудничество и сформировать надежную систему в отрасли.
+                </p>
+
+                <div class="goal__row">
+                    <div class="goal__col">
+                        <img src="../img/mission/1.avif" alt="icon">
+                        <h3 class="goal__info-title">Единство и сотрудничество</h3>
+                        <p class="goal__info-text">Объединение бухгалтерских аутсорсинговых компаний на одной
+                            профессиональной платформе и развитие обмена опытом</p>
+                    </div>
+                    <div class="goal__col">
+                        <img src="../img/mission/2.avif" alt="icon">
+                        <h3 class="goal__info-title">Профессиональные стандарты</h3>
+                        <p class="goal__info-text">Введение критериев качества услуг, этики и ответственности,
+                            формирование прозрачного и надежного рынка аутсорсинга</p>
+                    </div>
+                    <div class="goal__col">
+                        <img src="../img/mission/3.avif" alt="icon">
+                        <h3 class="goal__info-title">Инновации и цифровизация</h3>
+                        <p class="goal__info-text">Внедрение современных технологий, автоматизация процессов и повышение
+                            квалификации специалистов</p>
+                    </div>
+                </div>
+                <button class="goal__button open__modal">Стать членом</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="management" id="management">
+        <div class="management__container">
+            <h2 class="management__title">Совет</h2>
+            <p class="management__description">Наша ассоциация создана опытными специалистами</p>
+            <div class="management__team">
+                <div class="management__member">
+                    <img class="management__member-image" src="../img/management/1.avif" alt="person" width="327"
+                        height="327" loading="lazy">
+                    <div class="management__member-info">
+                        <h4 class="management__member-name">Султанов Отамурод Шавкат оглы</h4>
+                        <p class="management__member-experience">Директор «TURAN OUTSOURCING SERVICE»</p>
+                    </div>
+                </div>
+                <div class="management__member">
+                    <img class="management__member-image" src="../img/management/4.avif" alt="person" width="327"
+                        height="327" loading="lazy">
+                    <div class="management__member-info">
+                        <h4 class="management__member-name">Артём Атбашьян Мнацаканович</h4>
+                        <p class="management__member-experience">Председатель совета
+                            Аудитор, основатель ATB Accounting Consult и ATB Audit</p>
+                    </div>
+                </div>
+                <div class="management__member">
+                    <img class="management__member-image" src="../img/management/2.avif" alt="person" width="327"
+                        height="327" loading="lazy">
+                    <div class="management__member-info">
+                        <h4 class="management__member-name">Александра Толмачева Владимировна</h4>
+                        <p class="management__member-experience">Предприниматель, тренер, основатель компании TA-VAT</p>
+                    </div>
+                </div>
+                <div class="management__member">
+                    <img class="management__member-image" src="../img/management/3.avif" alt="person" width="327"
+                        height="327" loading="lazy">
+                    <div class="management__member-info">
+                        <h4 class="management__member-name">Саидкулов Авзбек Ботыркул оглы</h4>
+                        <p class="management__member-experience">Директор «TURAN OUTSOURCING SERVICE»</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="docs">
+        <div class="docs__container">
+            <h2 class="docs__title">Документы</h2>
+            <p class="docs__description">Деятельность ассоциации открыта и прозрачна.</p>
+            <div class="docs__list">
+                <div class="docs__item">
+                    <img class="docs__item-icon" src="../img/docs/1.avif" alt="icon" width="64" height="64"
+                        loading="lazy">
+                    <h3 class="docs__item-title">Регламент</h3>
+                    <p class="docs__item-description">Ознакомьтесь с внутренними правилами и рабочими процедурами,
+                        регулирующими деятельность ассоциации.</p>
+
+                    <a class="docs__link" href="#">
+                        Просмотреть документ
+                        <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.9924 0.665575C10.9632 4.96124 10.9562 5.99468 10.927 10.2904M10.9924 0.665575L1.36766 0.600183M10.9924 0.665575L0.421339 11.094"
+                                stroke="#191919" stroke-width="1.2" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="docs__item">
+                    <img class="docs__item-icon" src="../img/docs/2.avif" alt="icon" width="64" height="64"
+                        loading="lazy">
+                    <h3 class="docs__item-title">Устав</h3>
+                    <p class="docs__item-description">Основные документы, определяющие цели, задачи и порядок управления
+                        организацией</p>
+
+                    <a class="docs__link" href="#">
+                        Просмотреть документ
+                        <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.9924 0.665575C10.9632 4.96124 10.9562 5.99468 10.927 10.2904M10.9924 0.665575L1.36766 0.600183M10.9924 0.665575L0.421339 11.094"
+                                stroke="#191919" stroke-width="1.2" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="docs__item">
+                    <img class="docs__item-icon" src="../img/docs/3.avif" alt="icon" width="64" height="64"
+                        loading="lazy">
+                    <h3 class="docs__item-title">Свидетельство и учредители</h3>
+                    <p class="docs__item-description">Официальная информация о государственной регистрации ассоциации и
+                        её учредителях</p>
+
+                    <a class="docs__link" href="#">
+                        Просмотреть документ
+                        <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.9924 0.665575C10.9632 4.96124 10.9562 5.99468 10.927 10.2904M10.9924 0.665575L1.36766 0.600183M10.9924 0.665575L0.421339 11.094"
+                                stroke="#191919" stroke-width="1.2" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="docs__item">
+                    <img class="docs__item-icon" src="../img/docs/4.avif" alt="icon" width="64" height="64"
+                        loading="lazy">
+                    <h3 class="docs__item-title">Протокол</h3>
+                    <p class="docs__item-description">Сборник официальных записей заседаний, решений и важных инициатив
+                        ассоциации</p>
+
+                    <a class="docs__link" href="#">
+                        Просмотреть документ
+                        <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.9924 0.665575C10.9632 4.96124 10.9562 5.99468 10.927 10.2904M10.9924 0.665575L1.36766 0.600183M10.9924 0.665575L0.421339 11.094"
+                                stroke="#191919" stroke-width="1.2" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="members">
+        <div class="members__container">
+            <h2 class="docs__title">Список членов</h2>
+            <p class="docs__description">Мы защищаем права наших членов так же, как свои собственные</p>
+
+            <div class="members__carousel">
+
+                <div class="members__track">
+                    <div class="members__info">
+                        <img class="members__img" width="327" height="327" src="../img/member-list/1.avif" alt="">
+                        <h4 class="members__info-title">Turan OS</h4>
+                        <p class="members__info-description">Бухгалтерский аутсорсинг и налоговое консультирование для
+                            малого и среднего бизнеса</p>
+                    </div>
+                    <div class="members__info">
+                        <img class="members__img" width="327" height="327" src="../img/member-list/2.avif" alt="">
+                        <h4 class="members__info-title">ATB Accounting Consulting</h4>
+                        <p class="members__info-description">Бухгалтерия, аудит и финансовая отчётность для малого и
+                            среднего бизнеса</p>
+                    </div>
+                    <div class="members__info">
+                        <img class="members__img" width="327" height="327" src="../img/member-list/3.avif" alt="">
+                        <h4 class="members__info-title">Ta-Vat consulting</h4>
+                        <p class="members__info-description">Бухгалтерские, кадровые и налоговые услуги для малого и
+                            среднего бизнеса</p>
+                    </div>
+                    <div class="members__info">
+                        <img class="members__img" width="327" height="327" src="../img/member-list/4.avif" alt="">
+                        <h4 class="members__info-title">Grossbook</h4>
+                        <p class="members__info-description">Специализация на ведении бухгалтерского и налогового учета
+                            для малого и среднего бизнеса</p>
+                    </div>
+
+                    <div class="members__info">
+                        <img class="members__img" width="327" height="327" src="../img/member-list/1.avif" alt="">
+                        <h4 class="members__info-title">Turan OS</h4>
+                        <p class="members__info-description">Бухгалтерский аутсорсинг и налоговое консультирование для
+                            малого и среднего бизнеса</p>
+                    </div>
+                    <div class="members__info">
+                        <img class="members__img" width="327" height="327" src="../img/member-list/2.avif" alt="">
+                        <h4 class="members__info-title">ATB Accounting Consulting</h4>
+                        <p class="members__info-description">Бухгалтерия, аудит и финансовая отчётность для малого и
+                            среднего бизнеса</p>
+                    </div>
+                    <div class="members__info">
+                        <img class="members__img" width="327" height="327" src="../img/member-list/3.avif" alt="">
+                        <h4 class="members__info-title">Ta-Vat consulting</h4>
+                        <p class="members__info-description">Бухгалтерские, кадровые и налоговые услуги для малого и
+                            среднего бизнеса</p>
+                    </div>
+                    <div class="members__info">
+                        <img class="members__img" width="327" height="327" src="../img/member-list/4.avif" alt="">
+                        <h4 class="members__info-title">Grossbook</h4>
+                        <p class="members__info-description">Специализация на ведении бухгалтерского и налогового учета
+                            для малого и среднего бизнеса</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="members__gradient"></div>
+        </div>
+    </section>
+
+
+    <section class="benefits" id="benefits">
+        <div class="benefits__container">
+            <h2 class="docs__title">Преимущества членства</h2>
+            <p class="docs__description">Присоединившись к ассоциации, вы получаете</p>
+            <div class="benefitsnt__team">
+                <div class="benefits__member">
+                    <img class="benefits__member-image" src="../img/benefits/1.avif" alt="person" width="270"
+                        height="171" loading="lazy">
+                    <div class="benefits__member-info">
+                        <h4 class="benefits__member-name">1. Реестр недобросовестных клиентов</h4>
+                        <p class="benefits__member-experience">Вы заранее узнаете о клиентах из «черного списка» и
+                            ненадёжных агентствах</p>
+                    </div>
+                </div>
+                <div class="benefits__member">
+                    <img class="benefits__member-image" src="../img/benefits/2.avif" alt="person" width="270"
+                        height="171" loading="lazy">
+                    <div class="benefits__member-info">
+                        <h4 class="benefits__member-name">2. Мероприятия</h4>
+                        <p class="benefits__member-experience">Семинары и обучающие программы регулярно повышают знания
+                            и квалификацию вашей команды</p>
+                    </div>
+                </div>
+                <div class="benefits__member">
+                    <img class="benefits__member-image" src="../img/benefits/3.avif" alt="person" width="270"
+                        height="171" loading="lazy">
+                    <div class="benefits__member-info">
+                        <h4 class="benefits__member-name">3. Новые знакомства</h4>
+                        <p class="benefits__member-experience">Вы устанавливаете полезные связи с коллегами по отрасли.
+                            Ваш networking расширяется</p>
+                    </div>
+                </div>
+                <div class="benefits__member">
+                    <img class="benefits__member-image" src="../img/benefits/5.avif" alt="person" width="270"
+                        height="171" loading="lazy">
+                    <div class="benefits__member-info">
+                        <h4 class="benefits__member-name">4. Tajriba almashinuvi</h4>
+                        <p class="benefits__member-experience">Встречи со специалистами помогают получить готовые
+                            решения для ваших бизнес-задач</p>
+                    </div>
+                </div>
+                <div class="benefits__member">
+                    <img class="benefits__member-image" src="../img/benefits/4.avif" alt="person" width="270"
+                        height="171" loading="lazy">
+                    <div class="benefits__member-info">
+                        <h4 class="benefits__member-name">5. Систематизация работы</h4>
+                        <p class="benefits__member-experience">Получаете четкие инструкции по работе с клиентами,
+                            формированию цен и заключению договоров</p>
+                    </div>
+                </div>
+                <div class="benefits__member">
+                    <img class="benefits__member-image" src="../img/benefits/6.avif" alt="person" width="270"
+                        height="171" loading="lazy">
+                    <div class="benefits__member-info">
+                        <h4 class="benefits__member-name">6. Цифровизация</h4>
+                        <p class="benefits__member-experience">Практическая помощь по автоматизации, современным
+                            программам и цифровым решениям.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="app" class="app">
+        <div class="app__container">
+            <h2 class="app__title">Подать заявку на членство</h2>
+            <p class="app__description">Присоединившись к ассоциации, вы получаете новые возможности для сотрудничества,
+                обмена знаниями и развития. Заполните форму ниже и отправьте заявку.</p>
+            <form class="app__form" id="applicationFormAriza">
+                <div class="app__inpBox">
+                    <label class="app__form-label" for="nameAriza">Полное имя</label>
+                    <input class="app__form-input" type="text" name="name" id="nameAriza" placeholder="Полное имя"
+                        required>
+                </div>
+                <div class="app__inpBox">
+                    <label class="app__form-label" for="telAriza">Номер телефона</label>
+                    <input class="app__form-input" type="tel" name="tel" id="telAriza"
+                        placeholder="Полный номер телефона" required>
+                </div>
+                <div class="app__inpBox">
+                    <label class="app__form-label" for="messageAriza">Комментарий</label>
+                    <textarea class="app__form-textarea" name="message" id="messageAriza"
+                        placeholder="Введите ваш комментарий" required></textarea>
+                </div>
+                <div class="app__form-actions">
+                    <div class="app__form-checkbox-group">
+                        <input class="app__form-checkbox" type="checkbox" id="checkboxAriza" required>
+                        <label class="app__form-checkbox-label" for="checkboxAriza">Условия принятия</label>
+                    </div>
+                    <button class="app__form-button" type="submit" id="submitBtnAriza">
+                        <span id="btnTextAriza">Отправить</span>
+                    </button>
+                </div>
+                <div class="success-message-ariza" id="successMessageAriza">
+                    Ваш запрос отправлен! Мы свяжемся с вами в ближайшее время.
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section id="news" class="news">
+        <div class="news__container">
+            <h2 class="news__title">Новости</h2>
+            <p class="news__description">Полезные статьи и новости от членов ассоциации и экспертов
+            </p>
+            <div class="news__list">
+                <div class="news__item">
+                    <a href="./about.html" class="news__item-link">
+                        <img class="news__item-image" src="../img/news/1.avif" alt="build" width="381" height="258"
+                            loading="lazy">
+                        <h3 class="news__item-title">СМИ о нас</h3>
+                        <p class="news__item-text">В Узбекистане начала работу международная ассоциация бухгалтерского
+                            аутсорсинга. Ассоциация объединяет компании на рынке бухгалтерского аутсорсинга...
+                        </p>
+                        <p class="news__item-date">
+                            <span class="news__item-date-icon">
+                                <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M13.8333 2.5V5.83333M7.16659 2.5V5.83333M3.83325 9.16667H17.1666M9.66659 12.5H10.4999V15M3.83325 5.83333C3.83325 5.39131 4.00885 4.96738 4.32141 4.65482C4.63397 4.34226 5.05789 4.16667 5.49992 4.16667H15.4999C15.9419 4.16667 16.3659 4.34226 16.6784 4.65482C16.991 4.96738 17.1666 5.39131 17.1666 5.83333V15.8333C17.1666 16.2754 16.991 16.6993 16.6784 17.0118C16.3659 17.3244 15.9419 17.5 15.4999 17.5H5.49992C5.05789 17.5 4.63397 17.3244 4.32141 17.0118C4.00885 16.6993 3.83325 16.2754 3.83325 15.8333V5.83333Z"
+                                        stroke="#697583" stroke-width="1.6" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                            23 октября, 18:00
+                        </p>
+                    </a>
+                </div>
+                <div class="news__item">
+                    <a href="./law.html" class="news__item-link">
+                        <img class="news__item-image" src="../img/news/4.avif" alt="build" width="381" height="258"
+                            loading="lazy">
+                        <h3 class="news__item-title">О новом законе по аутсорсингу</h3>
+                        <p class="news__item-text">В Узбекистане принято постановление о внедрении аутсорсинга в
+                            статистические процессы. Постановление охватывает сбор и обработку статистических данных...
+                        </p>
+                        <p class="news__item-date">
+                            <span class="news__item-date-icon">
+                                <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M13.8333 2.5V5.83333M7.16659 2.5V5.83333M3.83325 9.16667H17.1666M9.66659 12.5H10.4999V15M3.83325 5.83333C3.83325 5.39131 4.00885 4.96738 4.32141 4.65482C4.63397 4.34226 5.05789 4.16667 5.49992 4.16667H15.4999C15.9419 4.16667 16.3659 4.34226 16.6784 4.65482C16.991 4.96738 17.1666 5.39131 17.1666 5.83333V15.8333C17.1666 16.2754 16.991 16.6993 16.6784 17.0118C16.3659 17.3244 15.9419 17.5 15.4999 17.5H5.49992C5.05789 17.5 4.63397 17.3244 4.32141 17.0118C4.00885 16.6993 3.83325 16.2754 3.83325 15.8333V5.83333Z"
+                                        stroke="#697583" stroke-width="1.6" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                            23 октября, 18:23
+                        </p>
+                    </a>
+                </div>
+                <div class="news__item">
+                    <a href="./accounting.html" class="news__item-link">
+                        <img class="news__item-image" src="../img/news/5.avif" alt="build" width="381" height="258"
+                            loading="lazy">
+                        <h3 class="news__item-title">Сотрудничество Узбекистана и Казахстана в бухгалтерском
+                            аутсорсинге...</h3>
+
+                        <p class="news__item-text">18 февраля 2025 года рабочая группа двух стран по экономическому
+                            сотрудничеству обсудила вопросы финансовых услуг, включая бухгалтерский аутсорсинг...</p>
+                        <p class="news__item-date">
+                            <span class="news__item-date-icon">
+                                <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M13.8333 2.5V5.83333M7.16659 2.5V5.83333M3.83325 9.16667H17.1666M9.66659 12.5H10.4999V15M3.83325 5.83333C3.83325 5.39131 4.00885 4.96738 4.32141 4.65482C4.63397 4.34226 5.05789 4.16667 5.49992 4.16667H15.4999C15.9419 4.16667 16.3659 4.34226 16.6784 4.65482C16.991 4.96738 17.1666 5.39131 17.1666 5.83333V15.8333C17.1666 16.2754 16.991 16.6993 16.6784 17.0118C16.3659 17.3244 15.9419 17.5 15.4999 17.5H5.49992C5.05789 17.5 4.63397 17.3244 4.32141 17.0118C4.00885 16.6993 3.83325 16.2754 3.83325 15.8333V5.83333Z"
+                                        stroke="#697583" stroke-width="1.6" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                            18 февраля, 10:10
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <button class="goal__button open__modal" style="margin-top: 48px; max-width: 332px; margin-left: 30px;">Все
+                новости</button>
+        </div>
+    </section>
+
+
+    <section class="faq">
+        <div class="faq__container">
+            <h2 class="faq__title">FAQ</h2>
+            <p class="faq__description">Часто задаваемые вопросы наших пользователей</p>
+            <div class="faq__content">
+                <div class="faq__questions">
+                    <div class="faq__question">
+                        <button class="faq__question-toggle">
+                            <p class="faq__question-text">Кто может стать членом ассоциации?</p>
+                            <span class="faq__question-icon">
+                                <img class="icon-plus" src="../img/plus.svg" width="28" height="28" loading="lazy"
+                                    alt="toggle-icon">
+                                <img class="icon-minus" src="../img/minus.svg" width="28" height="28" loading="lazy"
+                                    alt="toggle-icons">
+                            </span>
+                        </button>
+                        <p class="faq__answer">
+                            Членство предоставляется только юридическим лицам. Компания должна иметь не менее 2 лет
+                            опыта, годовой оборот не ниже 300 базовых величин и не менее 70% услуг в сфере
+                            бухгалтерского аутсорсинга.
+                        </p>
+                    </div>
+                    <div class="faq__question">
+                        <button class="faq__question-toggle">
+                            <p class="faq__question-text">Что если у компании еще недостаточно опыта?</p>
+                            <span class="faq__question-icon">
+                                <img class="icon-plus" src="../img/plus.svg" width="28" height="28" loading="lazy"
+                                    alt="toggle-icon">
+                                <img class="icon-minus" src="../img/minus.svg" width="28" height="28" loading="lazy"
+                                    alt="toggle-icons">
+                            </span>
+                        </button>
+                        <p class="faq__answer">
+                            Такие компании могут присоединиться на 1 год в качестве «наблюдателя». За это время они
+                            могут дорасти до полноценного членства.
+                        </p>
+                    </div>
+                    <div class="faq__question">
+                        <button class="faq__question-toggle">
+                            <p class="faq__question-text">Как стать членом?</p>
+                            <span class="faq__question-icon">
+                                <img class="icon-plus" src="../img/plus.svg" width="28" height="28" loading="lazy"
+                                    alt="toggle-icon">
+                                <img class="icon-minus" src="../img/minus.svg" width="28" height="28" loading="lazy"
+                                    alt="toggle-icons">
+                            </span>
+                        </button>
+                        <p class="faq__answer">
+                            Вы заполняете онлайн Google-форму и загружаете необходимые документы.
+                        </p>
+                    </div>
+                    <div class="faq__question">
+                        <button class="faq__question-toggle">
+                            <p class="faq__question-text">За сколько дней рассматривается заявка?</p>
+                            <span class="faq__question-icon">
+                                <img class="icon-plus" src="../img/plus.svg" width="28" height="28" loading="lazy"
+                                    alt="toggle-icon">
+                                <img class="icon-minus" src="../img/minus.svg" width="28" height="28" loading="lazy"
+                                    alt="toggle-icons">
+                            </span>
+                        </button>
+                        <p class="faq__answer">
+                            Ответ предоставляется в течение 5 рабочих дней.
+                        </p>
+                    </div>
+                    <div class="faq__question">
+                        <button class="faq__question-toggle">
+                            <p class="faq__question-text">Какие возможности предоставляются членам?</p>
+                            <span class="faq__question-icon">
+                                <img class="icon-plus" src="../img/plus.svg" width="28" height="28" loading="lazy"
+                                    alt="toggle-icon">
+                                <img class="icon-minus" src="../img/minus.svg" width="28" height="28" loading="lazy"
+                                    alt="toggle-icons">
+                            </span>
+                        </button>
+                        <ul class="faq__answer ml">
+                            <li>Участие в мероприятиях и тренингах
+                            </li>
+                            <li>Обмен опытом</li>
+                            <li>Получение методических материалов</li>
+                            <li>Право использования логотипа Ассоциации</li>
+                        </ul>
+                    </div>
+                    <div class="faq__question">
+                        <button class="faq__question-toggle">
+                            <p class="faq__question-text">Есть ли ежегодный взнос?</p>
+                            <span class="faq__question-icon">
+                                <img class="icon-plus" src="../img/plus.svg" width="28" height="28" loading="lazy"
+                                    alt="toggle-icon">
+                                <img class="icon-minus" src="../img/minus.svg" width="28" height="28" loading="lazy"
+                                    alt="toggle-icons">
+                            </span>
+                        </button>
+                        <p class="faq__answer">
+                            Да, есть. Размер определяется внутренними документами.
+                        </p>
+                    </div>
+                    <div class="faq__question">
+                        <button class="faq__question-toggle">
+                            <p class="faq__question-text">В каких случаях членство прекращается?</p>
+                            <span class="faq__question-icon">
+                                <img class="icon-plus" src="../img/plus.svg" width="28" height="28" loading="lazy"
+                                    alt="toggle-icon">
+                                <img class="icon-minus" src="../img/minus.svg" width="28" height="28" loading="lazy"
+                                    alt="toggle-icons">
+                            </span>
+                        </button>
+                        <ul class="faq__answer ml">
+                            <li>Несоблюдение правил
+                            </li>
+                            <li>Несвоевременная оплата</li>
+                            <li>Предоставление ложной информации</li>
+                        </ul>
+                    </div>
+                    <div class="faq__question">
+                        <button class="faq__question-toggle">
+                            <p class="faq__question-text">Может ли исключенная компания вступить снова?</p>
+                            <span class="faq__question-icon">
+                                <img class="icon-plus" src="../img/plus.svg" width="28" height="28" loading="lazy"
+                                    alt="toggle-icon">
+                                <img class="icon-minus" src="../img/minus.svg" width="28" height="28" loading="lazy"
+                                    alt="toggle-icons">
+                            </span>
+                        </button>
+                        <p class="faq__answer">
+                            Да, можно подать заявку повторно через 3 месяца.
+                        </p>
+                    </div>
+                    <div class="faq__question">
+                        <button class="faq__question-toggle">
+                            <p class="faq__question-text">В чем разница между «членом» и «наблюдателем»?</p>
+                            <span class="faq__question-icon">
+                                <img class="icon-plus" src="../img/plus.svg" width="28" height="28" loading="lazy"
+                                    alt="toggle-icon">
+                                <img class="icon-minus" src="../img/minus.svg" width="28" height="28" loading="lazy"
+                                    alt="toggle-icons">
+                            </span>
+                        </button>
+                        <p class="faq__answer">
+                            У членов больше возможностей: доступ к закрытым проектам, сертификаты и право получения
+                            знака качества.
+                        </p>
+                    </div>
+                    <div class="faq__question">
+                        <button class="faq__question-toggle">
+                            <p class="faq__question-text">Можно ли забирать клиентов других членов ассоциации?
+                            </p>
+                            <span class="faq__question-icon">
+                                <img class="icon-plus" src="../img/plus.svg" width="28" height="28" loading="lazy"
+                                    alt="toggle-icon">
+                                <img class="icon-minus" src="../img/minus.svg" width="28" height="28" loading="lazy"
+                                    alt="toggle-icons">
+                            </span>
+                        </button>
+                        <p class="faq__answer">
+                            Нет. Это строго запрещено. В случае нарушения — исключение из Ассоциации!
+                        </p>
+                    </div>
+                </div>
+                <div class="faq__contact">
+                    <img class="faq__contact-image" src="../img/question.avif" width="236" height="176" loading="lazy"
+                        alt="question">
+                    <h3 class="faq__contact-title">Остались вопросы?</h3>
+                    <p class="faq__contact-text">Отправьте свой вопрос через кнопку <br> ниже — мы ответим в кратчайшие
+                        сроки</p>
+                    <a href="#contact" class="faq__contact-button">Задать вопрос</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="contact" class="bottom-form">
+        <div class="bottom-form__container">
+            <h2 class="bottom-form__title">Есть вопросы?</h2>
+            <p class="bottom-form__description">Если у вас есть вопросы, напишите нам прямо сейчас — мы свяжемся с вами
+            </p>
+            <form class="bottom-form__form" id="questionForm">
+                <div class="bottom-form__input-group">
+                    <div class="bottom-form__input-wrapper">
+                        <label class="bottom-form__label" for="nameQues">Ваше имя</label>
+                        <input class="bottom-form__input" type="text" required autocomplete="name" id="nameQues"
+                            name="name" placeholder="Пожалуйста, введите ваше имя">
+                    </div>
+                    <div class="bottom-form__input-wrapper">
+                        <label class="bottom-form__label" for="telQues">Номер телефона</label>
+                        <input class="bottom-form__input" type="tel" required autocomplete="tel" name="tel" id="telQues"
+                            placeholder="+998 000-00-00">
+                    </div>
+                </div>
+                <div class="bottom-form__textarea-wrapper">
+                    <label class="bottom-form__label" for="messageQues">Дополнительные вопросы</label>
+                    <textarea class="bottom-form__textarea" name="message" id="messageQues"
+                        placeholder="Введите ваши дополнительные вопросы......."></textarea>
+                </div>
+                <div class="success-message-ques" id="successMessageQues">
+                    ✅ Ваша заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.
+                </div>
+                <div class="bottom-form__actions">
+                    <div class="bottom-form__checkbox-wrapper">
+                        <div style="width: 24px; height: 24px;">
+                            <input class="bottom-form__checkbox" id="checkQues" type="checkbox" required>
+                        </div>
+                        <label class="bottom-form__labelCheck" for="checkQues">Я согласен с условиями оферты</label>
+                    </div>
+                    <button class="bottom-form__button" type="submit" id="submitBtnQues">
+                        <span id="btnTextQues">Отправить</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+
+    <div class="maps">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d187.32350641473926!2d69.26986044188713!3d41.30503245142903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b0cc379e9c3%3A0xa5a9323b4aa5cb98!2sTashkent%2C%20Uzbekistan!5e0!3m2!1sen!2s!4v1762698975486!5m2!1sen!2s"
+            width="1920" height="557" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        <div class="maps__box">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="10" cy="9.16699" rx="2.5" ry="2.5" stroke="#EA4335" stroke-width="1.25"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M14.7143 13.8806L11.1785 17.4164C10.5278 18.0665 9.4734 18.0665 8.82266 17.4164L5.286 13.8806C2.6826 11.2771 2.68267 7.05602 5.28616 4.45258C7.88964 1.84914 12.1107 1.84914 14.7142 4.45258C17.3177 7.05602 17.3177 11.2771 14.7143 13.8806V13.8806Z"
+                    stroke="#EA4335" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <p class="maps__description">Город Ташкент, Чиланзарский район, квартал «Ц», дом 7/1</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__brand">
+                <a class="footer__logo-link" href="#">
+                    <img class="footer__logo" src="../img/footlogo.avif" alt="logo" width="163" height="50"
+                        loading="lazy">
+                </a>
+                <ul class="footer__social-list">
+                    <li class="footer__social-item">
+                        <a class="footer__social-link" target="_blank" href="#">
+                            <img class="footer__social-icon" src="../img/footer/telegram.svg" alt="social media icon"
+                                width="32" height="32" loading="lazy">
+                        </a>
+                    </li>
+                    <li class="footer__social-item">
+                        <a class="footer__social-link" target="_blank" href="#">
+                            <img class="footer__social-icon" src="../img/footer/instagram.svg" alt="social media icon"
+                                width="32" height="32" loading="lazy">
+                        </a>
+                    </li>
+                    <li class="footer__social-item">
+                        <a class="footer__social-link" target="_blank" href="#">
+                            <img class="footer__social-icon" src="../img/footer/youtube.svg" alt="social media icon"
+                                width="32" height="32" loading="lazy">
+                        </a>
+                    </li>
+                    <li class="footer__social-item">
+                        <a class="footer__social-link" target="_blank" href="#">
+                            <img class="footer__social-icon" src="../img/footer/facebook.svg" alt="social media icon"
+                                width="32" height="32" loading="lazy">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__content">
+                <div class="footer__links">
+                    <ul class="footer__links-list">
+                        <li class="footer__links-item"><a class="footer__link" href="#goal">Об ассоциации</a>
+                        </li>
+                        <li class="footer__links-item"><a class="footer__link" href="#management">Совет</a></li>
+                        <li class="footer__links-item"><a class="footer__link" href="#benefits">Члены и привилегии</a>
+                        </li>
+                        <li class="footer__links-item"><a class="footer__link" href="#news">Новости</a></li>
+                    </ul>
+
+                    <p class="footer__description">Ассоциация, объединяющая бухгалтерские аутсорсинговые компании и
+                        создающая профессиональную и надежную систему.</p>
+                </div>
+                <div class="footer__contact">
+                    <ul class="footer__contact-list">
+                        <li class="footer__contact-item">
+                            <a class="footer__contact-link" href="https://yandex.uz/maps/-/CLQ2nDO3">
+                                <span class="footer__contact-icon">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <ellipse cx="10" cy="9.16699" rx="2.5" ry="2.5" stroke="currentColor"
+                                            stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M14.7141 13.8806L11.1783 17.4164C10.5275 18.0665 9.47316 18.0665 8.82242 17.4164L5.28575 13.8806C2.68236 11.2771 2.68243 7.05602 5.28591 4.45258C7.8894 1.84914 12.1104 1.84914 14.7139 4.45258C17.3174 7.05602 17.3175 11.2771 14.7141 13.8806V13.8806Z"
+                                            stroke="currentColor" stroke-width="1.25" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </span>
+                                Город Ташкент, Чиланзарский район, квартал «Ц», дом 7/1
+                            </a>
+                        </li>
+                        <li class="footer__contact-item">
+                            <a class="footer__contact-link" href="tel: +99871-233-14-10">
+                                <span class="footer__contact-icon">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M10.7259 5.27161C11.7258 5.43919 12.6341 5.91146 13.3592 6.6351C14.0843 7.35873 14.5538 8.26518 14.7255 9.26304M10.8786 2C12.657 2.30088 14.279 3.14259 15.5689 4.42609C16.8589 5.7134 17.6985 7.33206 18 9.10688M16.6108 16.1681C16.6108 16.1681 15.6452 17.1164 15.4086 17.3944C15.0232 17.8058 14.569 18 13.9737 18C13.9164 18 13.8553 18 13.7981 17.9962C12.6646 17.9238 11.6113 17.482 10.8213 17.105C8.6612 16.0614 6.76445 14.5799 5.18827 12.7022C3.88687 11.1369 3.01673 9.6896 2.44045 8.13568C2.08552 7.18733 1.95576 6.44846 2.01301 5.75148C2.05117 5.30588 2.22291 4.93644 2.53967 4.62033L3.84107 3.32159C4.02808 3.14639 4.22653 3.05118 4.42117 3.05118C4.6616 3.05118 4.85624 3.1959 4.97836 3.31778C4.98218 3.32159 4.986 3.3254 4.98981 3.32921C5.22261 3.5463 5.44397 3.771 5.67677 4.01095C5.79508 4.13282 5.9172 4.2547 6.03933 4.38038L7.08121 5.42014C7.48575 5.82385 7.48575 6.19709 7.08121 6.60081C6.97053 6.71126 6.86367 6.82171 6.753 6.92835C6.43242 7.25589 6.68425 7.00457 6.35222 7.30164C6.34459 7.30926 6.33696 7.31307 6.33314 7.32068C6.00493 7.64823 6.06599 7.96815 6.13469 8.18524C6.1385 8.19667 6.14232 8.20809 6.14614 8.21952C6.4171 8.8746 6.79874 9.49159 7.37884 10.2267L7.38265 10.2305C8.43598 11.5254 9.54656 12.5347 10.7716 13.3078C10.9281 13.4069 11.0884 13.4868 11.241 13.563C11.3784 13.6316 11.5082 13.6963 11.6189 13.7649C11.6341 13.7725 11.6494 13.7839 11.6647 13.7915C11.7944 13.8563 11.9166 13.8867 12.0425 13.8867C12.3593 13.8867 12.5577 13.6887 12.6226 13.6239L13.3707 12.8774C13.5004 12.7479 13.7065 12.5918 13.9469 12.5918C14.1836 12.5918 14.3782 12.7403 14.4965 12.8698C14.5003 12.8736 14.5003 12.8736 14.5041 12.8774L16.607 14.976C17.0001 15.3644 16.6108 16.1681 16.6108 16.1681Z"
+                                            stroke="currentColor" stroke-width="1.25" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </span>
+                                +998 90-338-70-00
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">2025. Все права защищены</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script defer src="../js/app.js"></script>
+    <script defer src="../js/ariza.js"></script>
+    <script defer src="../js/modal.js"></script>
+    <script defer src="../js/question.js"></script>
+</body>
+
+</html>

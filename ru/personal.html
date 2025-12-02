@@ -5,25 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IAAOC</title>
-    <link rel="icon" href="./img/logoHead.avif">
+    <link rel="icon" href="../img/logoHead.avif">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/history.css">
-    <link rel="stylesheet" href="./css/modal.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/history.css">
+    <link rel="stylesheet" href="../css/modal.css">
 </head>
-    
-<body data-page="personalNews">
-    
+
+<body data-page="personal">
+
+
     <div id="thankYouModal" class="modal-overlay" style="display: none;">
         <div class="modal-content">
             <div class="modal-header">
-                <h2>Rahmat!</h2>
+                <h2>Спасибо!</h2>
                 <button class="close-btn" onclick="closeThankYouModal()">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="success-icon">✓</div>
-                <p>Ma'lumotlaringiz muvaffaqiyatli yuborildi.</p>
-                <p>Tez orada siz bilan bog'lanamiz.</p>
+                <p>Ваши данные успешно отправлены.</p>
+                <p>Мы свяжемся с вами в ближайшее время.</p>
             </div>
             <div class="modal-footer">
                 <button class="ok-btn" onclick="closeThankYouModal()">OK</button>
@@ -35,26 +37,26 @@
         <div class="header__container">
             <div class="header__logo">
                 <a href="./index.html" class="header__logo-link">
-                    <img src="./img/logo.avif" alt="logo" width="181" height="63" loading="lazy"
+                    <img src="../img/logo.avif" alt="logo" width="181" height="63" loading="lazy"
                         class="header__logo-img">
-                    <span class="header__logo-text">Tajribalarni birlashtirib <br>
-                        - Ishonchni oshiramiz</span>
+                    <span class="header__logo-text">Объединяем опыт <br>
+                        — укрепляем доверие</span>
                 </a>
             </div>
             <ul class="header__nav">
-                <li class="header__nav-item"><a href="#hero" class="header__nav-link">Biz haqimizda</a></li>
-                <li class="header__nav-item"><a href="./history.html" class="header__nav-link">Assotsiatsiya tarixi</a>
+                <li class="header__nav-item"><a href="#hero" class="header__nav-link">О нас</a></li>
+                <li class="header__nav-item"><a href="./history.html" class="header__nav-link">История ассоциации</a>
                 </li>
-                <li class="header__nav-item"><a href="#management" class="header__nav-link">Kengash</a></li>
-                <li class="header__nav-item"><a href="#benefits" class="header__nav-link">Azo’lar va Imtiyozlar</a></li>
-                <li class="header__nav-item"><a href="./news.html" class="header__nav-link">Yangiliklar</a></li>
+                <li class="header__nav-item"><a href="#management" class="header__nav-link">Совет</a></li>
+                <li class="header__nav-item"><a href="#benefits" class="header__nav-link">Члены и привилегии</a></li>
+                <li class="header__nav-item"><a href="./news.html" class="header__nav-link">Новости</a></li>
             </ul>
             <div class="header__actions">
                 <button class="header__lang-btn" type="button">
-                    <img src="./img/world.svg" alt="world" class="header__lang-icon" width="20" height="20"
+                    <img src="../img/world.svg" alt="world" class="header__lang-icon" width="20" height="20"
                         loading="lazy">
-                    <p class="header__lang-text">O'zbekcha</p>
-                    <img src="./img/chevron-down.svg" alt="arrow" class="header__lang-arrow" width="20" height="20"
+                    <p class="header__lang-text">Узбекский</p>
+                    <img src="../img/chevron-down.svg" alt="arrow" class="header__lang-arrow" width="20" height="20"
                         loading="lazy">
                     <ul class="header__lang-menu">
                     </ul>
@@ -74,7 +76,7 @@
         <div class="hamburger__menu" id="hamburgerMenu">
             <div class="hamburger__header">
                 <div class="hamburger__logo">
-                    <img src="./img/logo.avif" alt="logo" width="120" height="42" loading="lazy">
+                    <img src="../img/logo.avif" alt="logo" width="120" height="42" loading="lazy">
                 </div>
                 <button class="hamburger__close-btn" id="hamburgerClose">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -87,17 +89,20 @@
             <nav class="hamburger__nav">
                 <ul class="hamburger__nav-list">
                     <li class="hamburger__nav-item">
-                        <a href="#goal" class="hamburger__nav-link">Assotsiatsiya haqida</a>
+                        <a href="#hero" class="hamburger__nav-link">О нас</a>
+                    </li>
+                    <li class="hamburger__nav-item">
+                        <a href="./history.html" class="hamburger__nav-link">История ассоциации</a>
                     </li>
 
                     <li class="hamburger__nav-item">
-                        <a href="#management" class="hamburger__nav-link">Kengash</a>
+                        <a href="#management" class="hamburger__nav-link">Совет</a>
                     </li>
                     <li class="hamburger__nav-item">
-                        <a href="#benefits" class="hamburger__nav-link">Azo’lar va Imtiyozlar</a>
+                        <a href="#benefits" class="hamburger__nav-link">Члены и привилегии</a>
                     </li>
                     <li class="hamburger__nav-item">
-                        <a href="#news" class="hamburger__nav-link">Yangiliklar</a>
+                        <a href="./news.html" class="hamburger__nav-link">Новости</a>
                     </li>
 
                 </ul>
@@ -106,84 +111,85 @@
             <div class="hamburger__actions">
                 <div class="hamburger__lang-selector">
                     <button class="hamburger__lang-btn">
-                        <img src="./img/world.svg" alt="world" width="20" height="20">
-                        <span>O'zbekcha</span>
-                        <img src="./img/chevron-down.svg" alt="arrow" width="16" height="16">
+                        <img src="../img/world.svg" alt="world" width="20" height="20">
+                        <span>Узбекский</span>
+                        <img src="../img/chevron-down.svg" alt="arrow" width="16" height="16">
                         <ul class="hamburger__lang-menu">
                             <li class="hamburger__lang-item">Русский</li>
                             <li class="hamburger__lang-item">English</li>
                         </ul>
                     </button>
                 </div>
-                <a href="#app" class="hamburger__join-btn">A'zo bo'lish</a>
+                <a href="#app" class="hamburger__join-btn">Стать членом</a>
             </div>
         </div>
     </div>
 
+
     <section class="personal">
         <div class="personal__container">
-            <h2 class="personal__title">Zafar Hoshimov</h2>
-            <h3 class="personal__subtitle">Shaxsiy kabinetga xush kelibsiz!</h3>
+            <h2 class="personal__title">Зафар Хошимов</h2>
+            <h3 class="personal__subtitle">Добро пожаловать в личный кабинет!</h3>
         </div>
     </section>
 
 
     <section class="list">
         <div class="list__container">
-            <h2 class="list__title">Qora ro’yxat</h2>
-            <p class="list__description">Sohamizdagi firibgar insonlar, kompaniya va agentliklar</p>
+            <h2 class="list__title">Чёрный список</h2>
+            <p class="list__description">Мошенники, ненадёжные компании и агентства в нашей сфере</p>
 
             <div class="list__box">
                 <div class="list__col accordion-header">
-                    <h3 class="list__col-title">Ishonchsiz xodimlar</h3>
-                    <img class="arrow-icon" src="./img/personal-arrow.svg" loading="lazy" alt="personal arrow">
+                    <h3 class="list__col-title">Ненадёжные сотрудники</h3>
+                    <img class="arrow-icon" src="../img/personal-arrow.svg" loading="lazy" alt="personal arrow">
                 </div>
 
                 <div class="accordion-content">
                     <table>
                         <tr class="accardion-tr">
-                            <th>F.I.SH</th>
-                            <th>Sababi</th>
+                            <th>Ф.И.О.</th>
+                            <th>Причина</th>
                         </tr>
 
                         <tr>
                             <td class="cell-with-image">
-                                Ergashev Otabek Zafar o’g’li
+                                Эргашев Отабек Зафар оглы
                             </td>
-                            <td>Deadline ga amal qilmaydi. Topshirilgan vazifalar doimiy kechikadi</td>
+                            <td>— Не соблюдает дедлайны. Порученные задачи постоянно задерживаются.</td>
                         </tr>
 
                         <tr class="wwww">
                             <td class="cell-with-image">
-                                Ergashev Otabek Zafar o’g’li
+                              Эргашев Отабек Зафар оглы
                             </td>
-                            <td>Deadline ga amal qilmaydi. Topshirilgan vazifalar doimiy kechikadi</td>
+                            <td>— Не соблюдает дедлайны. Порученные задачи постоянно задерживаются.</td>
                         </tr>
 
                         <tr>
                             <td class="cell-with-image">
-                                Ergashev Otabek Zafar o’g’li
+                              Эргашев Отабек Зафар оглы
                             </td>
-                            <td>Deadline ga amal qilmaydi. Topshirilgan vazifalar doimiy kechikadi</td>
+                            <td>— Не соблюдает дедлайны. Порученные задачи постоянно задерживаются.</td>
                         </tr>
 
                         <tr class="wwww">
                             <td class="cell-with-image wwww" colspan="2">
-                                Ergashev Otabek Zafar o’g’li
+                              Эргашев Отабек Зафар оглы
                             </td>
                             <td>
-                                Deadline ga amal qilmaydi. Topshirilgan vazifalar doimiy kechikadi. Deadline ga amal
-                                <br>
-                                qilmaydi. Topshirilgan vazifalar doimiy kechikadi. Deadline ga amal qilmaydi. <br>
-                                Topshirilgan vazifalar doimiy kechikadi
+                                — Не соблюдает дедлайны. Порученные задачи постоянно задерживаются. Не соблюдает<br>
+                                дедлайны. Порученные задачи постоянно задерживаются. Не соблюдает дедлайны. <br>
+                                Порученные
+                                задачи постоянно задерживаются.
                             </td>
                         </tr>
 
                         <tr>
                             <td class="cell-with-image">
-                                Ergashev Otabek Zafar o’g’li
+                              Эргашев Отабек Зафар оглы
                             </td>
-                            <td>Deadline ga amal qilmaydi. Topshirilgan vazifalar doimiy kechikadi</td>
+                            <td>— Не соблюдает дедлайны. Порученные задачи постоянно задерживаются.</td>
                         </tr>
 
                     </table>
@@ -191,8 +197,8 @@
             </div>
             <div class="list__box">
                 <div class="list__col accordion-header">
-                    <h3 class="list__col-title">Firibgar kompaniyalar</h3>
-                    <img class="arrow-icon" src="./img/personal-arrow.svg" loading="lazy" alt="personal arrow">
+                    <h3 class="list__col-title">Мошеннические компании</h3>
+                    <img class="arrow-icon" src="../img/personal-arrow.svg" loading="lazy" alt="personal arrow">
                 </div>
 
                 <div class="accordion-content">
@@ -204,42 +210,42 @@
 
                         <tr>
                             <td class="cell-with-image">
-                                Ergashev Otabek Zafar o’g’li
+                              Эргашев Отабек Зафар оглы
                             </td>
-                            <td>Deadline ga amal qilmaydi. Topshirilgan vazifalar doimiy kechikadi</td>
+                            <td>— Не соблюдает дедлайны. Порученные задачи постоянно задерживаются.</td>
                         </tr>
 
                         <tr class="wwww">
                             <td class="cell-with-image">
-                                Ergashev Otabek Zafar o’g’li
+                              Эргашев Отабек Зафар оглы
                             </td>
-                            <td>Deadline ga amal qilmaydi. Topshirilgan vazifalar doimiy kechikadi</td>
+                            <td>— Не соблюдает дедлайны. Порученные задачи постоянно задерживаются.</td>
                         </tr>
 
                         <tr>
                             <td class="cell-with-image">
-                                Ergashev Otabek Zafar o’g’li
+                              Эргашев Отабек Зафар оглы
                             </td>
-                            <td>Deadline ga amal qilmaydi. Topshirilgan vazifalar doimiy kechikadi</td>
+                            <td>— Не соблюдает дедлайны. Порученные задачи постоянно задерживаются.</td>
                         </tr>
 
                         <tr class="wwww">
                             <td class="cell-with-image wwww" colspan="2">
-                                Ergashev Otabek Zafar o’g’li
+                              Эргашев Отабек Зафар оглы
                             </td>
                             <td>
-                                Deadline ga amal qilmaydi. Topshirilgan vazifalar doimiy kechikadi. Deadline ga amal
-                                <br>
-                                qilmaydi. Topshirilgan vazifalar doimiy kechikadi. Deadline ga amal qilmaydi. <br>
-                                Topshirilgan vazifalar doimiy kechikadi
+                                — Не соблюдает дедлайны. Порученные задачи постоянно задерживаются. Не соблюдает<br>
+                                дедлайны. Порученные задачи постоянно задерживаются. Не соблюдает дедлайны. <br>
+                                Порученные
+                                задачи постоянно задерживаются.
                             </td>
                         </tr>
 
                         <tr>
                             <td class="cell-with-image">
-                                Ergashev Otabek Zafar o’g’li
+                              Эргашев Отабек Зафар оглы
                             </td>
-                            <td>Deadline ga amal qilmaydi. Topshirilgan vazifalar doimiy kechikadi</td>
+                            <td>— Не соблюдает дедлайны. Порученные задачи постоянно задерживаются.</td>
                         </tr>
 
                     </table>
@@ -247,8 +253,8 @@
             </div>
             <div class="list__box">
                 <div class="list__col accordion-header">
-                    <h3 class="list__col-title">Ishonchsiz Agentliklar </h3>
-                    <img class="arrow-icon" src="./img/personal-arrow.svg" loading="lazy" alt="personal arrow">
+                    <h3 class="list__col-title">Ненадёжные агентства </h3>
+                    <img class="arrow-icon" src="../img/personal-arrow.svg" loading="lazy" alt="personal arrow">
                 </div>
 
                 <div class="accordion-content">
@@ -260,42 +266,42 @@
 
                         <tr>
                             <td class="cell-with-image">
-                                Ergashev Otabek Zafar o’g’li
+                              Эргашев Отабек Зафар оглы
                             </td>
-                            <td>Deadline ga amal qilmaydi. Topshirilgan vazifalar doimiy kechikadi</td>
+                            <td>— Не соблюдает дедлайны. Порученные задачи постоянно задерживаются.</td>
                         </tr>
 
                         <tr class="wwww">
                             <td class="cell-with-image">
-                                Ergashev Otabek Zafar o’g’li
+                              Эргашев Отабек Зафар оглы
                             </td>
-                            <td>Deadline ga amal qilmaydi. Topshirilgan vazifalar doimiy kechikadi</td>
+                            <td>— Не соблюдает дедлайны. Порученные задачи постоянно задерживаются.</td>
                         </tr>
 
                         <tr>
                             <td class="cell-with-image">
-                                Ergashev Otabek Zafar o’g’li
+                              Эргашев Отабек Зафар оглы
                             </td>
-                            <td>Deadline ga amal qilmaydi. Topshirilgan vazifalar doimiy kechikadi</td>
+                            <td>— Не соблюдает дедлайны. Порученные задачи постоянно задерживаются.</td>
                         </tr>
 
                         <tr class="wwww">
                             <td class="cell-with-image wwww" colspan="2">
-                                Ergashev Otabek Zafar o’g’li
+                              Эргашев Отабек Зафар оглы
                             </td>
                             <td>
-                                Deadline ga amal qilmaydi. Topshirilgan vazifalar doimiy kechikadi. Deadline ga amal
-                                <br>
-                                qilmaydi. Topshirilgan vazifalar doimiy kechikadi. Deadline ga amal qilmaydi. <br>
-                                Topshirilgan vazifalar doimiy kechikadi
+                                — Не соблюдает дедлайны. Порученные задачи постоянно задерживаются. Не соблюдает<br>
+                                дедлайны. Порученные задачи постоянно задерживаются. Не соблюдает дедлайны. <br>
+                                Порученные
+                                задачи постоянно задерживаются.
                             </td>
                         </tr>
 
                         <tr>
                             <td class="cell-with-image">
-                                Ergashev Otabek Zafar o’g’li
+                              Эргашев Отабек Зафар оглы
                             </td>
-                            <td>Deadline ga amal qilmaydi. Topshirilgan vazifalar doimiy kechikadi</td>
+                            <td>— Не соблюдает дедлайны. Порученные задачи постоянно задерживаются.</td>
                         </tr>
 
                     </table>
@@ -303,35 +309,12 @@
             </div>
         </div>
     </section>
-
     <section class="noNews">
         <div class="noNews__container">
-            <h2 class="noNews__title">Mening yangiliklarim</h2>
-            <div class="news__item" style="margin-bottom: 35px;">
-                <a href="#" class="news__item-link">
-                    <img class="news__item-image" src="./img/news/1.avif" alt="build" width="381" height="258"
-                        loading="lazy">
-                    <h3 class="news__item-title">Ommaviy Axborot Vositalari
-                        biz haqimizda</h3>
-                </a>
-                <p class="news__item-text">O‘zbekistonda xalqaro buxgalteriya autsorsing
-                    kompaniyalari uyushmasi o‘z
-                    faoliyatini boshladi. Uyushma buxgalteriya autsorsing bozoridagi kompaniyalarni
-                    birlashtirib...
-                </p>
-                <p class="news__item-date">
-                    <span class="news__item-date-icon">
-                        <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M13.8333 2.5V5.83333M7.16659 2.5V5.83333M3.83325 9.16667H17.1666M9.66659 12.5H10.4999V15M3.83325 5.83333C3.83325 5.39131 4.00885 4.96738 4.32141 4.65482C4.63397 4.34226 5.05789 4.16667 5.49992 4.16667H15.4999C15.9419 4.16667 16.3659 4.34226 16.6784 4.65482C16.991 4.96738 17.1666 5.39131 17.1666 5.83333V15.8333C17.1666 16.2754 16.991 16.6993 16.6784 17.0118C16.3659 17.3244 15.9419 17.5 15.4999 17.5H5.49992C5.05789 17.5 4.63397 17.3244 4.32141 17.0118C4.00885 16.6993 3.83325 16.2754 3.83325 15.8333V5.83333Z"
-                                stroke="#697583" stroke-width="1.6" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                        </svg>
-                    </span>
-                    23-Oktabr, 18:23
-                </p>
-            </div>
+            <h2 class="noNews__title">Мои новости</h2>
+            <img class="noNews__images" src="../img/noNews.avif" loading="lazy" alt="noNews">
+            <h3 class="noNews__subtitle">У вас пока нет новостей </h3>
+
             <button class="noNews__btn">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="24" height="24" rx="5" fill="white" />
@@ -339,7 +322,7 @@
                         d="M14.7719 7.31507C14.9737 7.11333 15.2474 7 15.5327 7C15.8181 7 16.0917 7.11333 16.2935 7.31507L17.6849 8.70647C17.8867 8.90827 18 9.18193 18 9.46728C18 9.75262 17.8867 10.0263 17.6849 10.2281L16.8316 11.0814L13.9186 8.16842L14.7719 7.31507ZM13.1578 8.92922L8.3153 13.7717C8.11348 13.9735 8.00006 14.2471 8 14.5325V15.9239C8 16.2093 8.11337 16.483 8.31518 16.6848C8.51699 16.8866 8.7907 17 9.0761 17H10.4675C10.7529 16.9999 11.0265 16.8865 11.2283 16.6847L16.0708 11.8422L13.1578 8.92922Z"
                         fill="black" />
                 </svg>
-                Yangilik qo’shish
+                Добавить новость
             </button>
         </div>
     </section>
@@ -348,31 +331,31 @@
         <div class="footer__container">
             <div class="footer__brand">
                 <a class="footer__logo-link" href="#">
-                    <img class="footer__logo" src="./img/footlogo.avif" alt="logo" width="163" height="50"
+                    <img class="footer__logo" src="../img/footlogo.avif" alt="logo" width="163" height="50"
                         loading="lazy">
                 </a>
                 <ul class="footer__social-list">
                     <li class="footer__social-item">
                         <a class="footer__social-link" target="_blank" href="#">
-                            <img class="footer__social-icon" src="./img/footer/telegram.svg" alt="social media icon"
+                            <img class="footer__social-icon" src="../img/footer/telegram.svg" alt="social media icon"
                                 width="32" height="32" loading="lazy">
                         </a>
                     </li>
                     <li class="footer__social-item">
                         <a class="footer__social-link" target="_blank" href="#">
-                            <img class="footer__social-icon" src="./img/footer/instagram.svg" alt="social media icon"
+                            <img class="footer__social-icon" src="../img/footer/instagram.svg" alt="social media icon"
                                 width="32" height="32" loading="lazy">
                         </a>
                     </li>
                     <li class="footer__social-item">
                         <a class="footer__social-link" target="_blank" href="#">
-                            <img class="footer__social-icon" src="./img/footer/youtube.svg" alt="social media icon"
+                            <img class="footer__social-icon" src="../img/footer/youtube.svg" alt="social media icon"
                                 width="32" height="32" loading="lazy">
                         </a>
                     </li>
                     <li class="footer__social-item">
                         <a class="footer__social-link" target="_blank" href="#">
-                            <img class="footer__social-icon" src="./img/footer/facebook.svg" alt="social media icon"
+                            <img class="footer__social-icon" src="../img/footer/facebook.svg" alt="social media icon"
                                 width="32" height="32" loading="lazy">
                         </a>
                     </li>
@@ -381,16 +364,16 @@
             <div class="footer__content">
                 <div class="footer__links">
                     <ul class="footer__links-list">
-                        <li class="footer__links-item"><a class="footer__link" href="#goal">Assotsiatsiya haqida</a>
+                        <li class="footer__links-item"><a class="footer__link" href="#goal">Об ассоциации</a>
                         </li>
-                        <li class="footer__links-item"><a class="footer__link" href="#management">Kengash</a></li>
-                        <li class="footer__links-item"><a class="footer__link" href="#benefits">Azo’lar va
-                                Imtiyozlar</a></li>
-                        <li class="footer__links-item"><a class="footer__link" href="#news">Yangiliklar</a></li>
+                        <li class="footer__links-item"><a class="footer__link" href="#management">Совет</a></li>
+                        <li class="footer__links-item"><a class="footer__link" href="#benefits">Члены и привилегии</a>
+                        </li>
+                        <li class="footer__links-item"><a class="footer__link" href="#news">Новости</a></li>
                     </ul>
 
-                    <p class="footer__description">Buxgalteriya autsorsing kompaniyalarini bir joyga to‘plab,
-                        professional va ishonchli tizim yaratadigan uyushma.</p>
+                    <p class="footer__description">Ассоциация, объединяющая бухгалтерские аутсорсинговые компании и
+                        создающая профессиональную и надежную систему.</p>
                 </div>
                 <div class="footer__contact">
                     <ul class="footer__contact-list">
@@ -407,7 +390,7 @@
                                             stroke-linejoin="round" />
                                     </svg>
                                 </span>
-                                Toshkent shahri Chilonzor tumani “ц” kvartal 7/1 
+                                Город Ташкент, Чиланзарский район, квартал «Ц», дом 7/1
                             </a>
                         </li>
                         <li class="footer__contact-item">
@@ -428,17 +411,15 @@
                 </div>
             </div>
             <div class="footer__bottom">
-                <p class="footer__copyright"><span>© </span> 2025. Barcha huquqlar himoyalangan</p>
+                <p class="footer__copyright">2025. Все права защищены</p>
             </div>
         </div>
     </footer>
-
-    
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script defer src="./js/app.js"></script>
-    <script defer src="./js/ariza.js"></script>
-    <script defer src="./js/modal.js"></script>
-    <script defer src="./js/question.js"></script>
+    <script defer src="../js/app.js"></script>
+    <script defer src="../js/ariza.js"></script>
+    <script defer src="../js/modal.js"></script>
+    <script defer src="../js/question.js"></script>
 </body>
 
 </html>

@@ -5,25 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IAAOC</title>
-    <link rel="icon" href="./img/logoHead.avif">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/history.css">
-    <link rel="stylesheet" href="./css/modal.css">
+    <link rel="icon" href="../img/logoHead.avif">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/history.css">
+    <link rel="stylesheet" href="../css/modal.css">
 </head>
 
-<body data-page="about">
+<body data-page="history">
 
     <div id="thankYouModal" class="modal-overlay" style="display: none;">
         <div class="modal-content">
             <div class="modal-header">
-                <h2>Rahmat!</h2>
+                <h2>Спасибо!</h2>
                 <button class="close-btn" onclick="closeThankYouModal()">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="success-icon">✓</div>
-                <p>Ma'lumotlaringiz muvaffaqiyatli yuborildi.</p>
-                <p>Tez orada siz bilan bog'lanamiz.</p>
+                <p>Ваши данные успешно отправлены.</p>
+                <p>Мы свяжемся с вами в ближайшее время.</p>
             </div>
             <div class="modal-footer">
                 <button class="ok-btn" onclick="closeThankYouModal()">OK</button>
@@ -35,26 +35,26 @@
         <div class="header__container">
             <div class="header__logo">
                 <a href="./index.html" class="header__logo-link">
-                    <img src="./img/logo.avif" alt="logo" width="181" height="63" loading="lazy"
+                    <img src="../img/logo.avif" alt="logo" width="181" height="63" loading="lazy"
                         class="header__logo-img">
-                    <span class="header__logo-text">Tajribalarni birlashtirib <br>
-                        - Ishonchni oshiramiz</span>
+                    <span class="header__logo-text">Объединяем опыт <br>
+                        — укрепляем доверие</span>
                 </a>
             </div>
             <ul class="header__nav">
-                <li class="header__nav-item"><a href="#hero" class="header__nav-link">Biz haqimizda</a></li>
-                <li class="header__nav-item"><a href="./history.html" class="header__nav-link">Assotsiatsiya tarixi</a>
+                <li class="header__nav-item"><a href="#hero" class="header__nav-link">О нас</a></li>
+                <li class="header__nav-item"><a href="./history.html" class="header__nav-link">История ассоциации</a>
                 </li>
-                <li class="header__nav-item"><a href="#management" class="header__nav-link">Kengash</a></li>
-                <li class="header__nav-item"><a href="#benefits" class="header__nav-link">Azo’lar va Imtiyozlar</a></li>
-                <li class="header__nav-item"><a href="./news.html" class="header__nav-link">Yangiliklar</a></li>
+                <li class="header__nav-item"><a href="#management" class="header__nav-link">Совет</a></li>
+                <li class="header__nav-item"><a href="#benefits" class="header__nav-link">Члены и привилегии</a></li>
+                <li class="header__nav-item"><a href="./news.html" class="header__nav-link">Новости</a></li>
             </ul>
             <div class="header__actions">
                 <button class="header__lang-btn" type="button">
-                    <img src="./img/world.svg" alt="world" class="header__lang-icon" width="20" height="20"
+                    <img src="../img/world.svg" alt="world" class="header__lang-icon" width="20" height="20"
                         loading="lazy">
-                    <p class="header__lang-text">O'zbekcha</p>
-                    <img src="./img/chevron-down.svg" alt="arrow" class="header__lang-arrow" width="20" height="20"
+                    <p class="header__lang-text">Узбекский</p>
+                    <img src="../img/chevron-down.svg" alt="arrow" class="header__lang-arrow" width="20" height="20"
                         loading="lazy">
                     <ul class="header__lang-menu">
                     </ul>
@@ -74,7 +74,7 @@
         <div class="hamburger__menu" id="hamburgerMenu">
             <div class="hamburger__header">
                 <div class="hamburger__logo">
-                    <img src="./img/logo.avif" alt="logo" width="120" height="42" loading="lazy">
+                    <img src="../img/logo.avif" alt="logo" width="120" height="42" loading="lazy">
                 </div>
                 <button class="hamburger__close-btn" id="hamburgerClose">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -87,17 +87,20 @@
             <nav class="hamburger__nav">
                 <ul class="hamburger__nav-list">
                     <li class="hamburger__nav-item">
-                        <a href="#goal" class="hamburger__nav-link">Assotsiatsiya haqida</a>
+                        <a href="#hero" class="hamburger__nav-link">О нас</a>
+                    </li>
+                    <li class="hamburger__nav-item">
+                        <a href="./history.html" class="hamburger__nav-link">История ассоциации</a>
                     </li>
 
                     <li class="hamburger__nav-item">
-                        <a href="#management" class="hamburger__nav-link">Kengash</a>
+                        <a href="#management" class="hamburger__nav-link">Совет</a>
                     </li>
                     <li class="hamburger__nav-item">
-                        <a href="#benefits" class="hamburger__nav-link">Azo’lar va Imtiyozlar</a>
+                        <a href="#benefits" class="hamburger__nav-link">Члены и привилегии</a>
                     </li>
                     <li class="hamburger__nav-item">
-                        <a href="#news" class="hamburger__nav-link">Yangiliklar</a>
+                        <a href="./news.html" class="hamburger__nav-link">Новости</a>
                     </li>
 
                 </ul>
@@ -106,57 +109,97 @@
             <div class="hamburger__actions">
                 <div class="hamburger__lang-selector">
                     <button class="hamburger__lang-btn">
-                        <img src="./img/world.svg" alt="world" width="20" height="20">
-                        <span>O'zbekcha</span>
-                        <img src="./img/chevron-down.svg" alt="arrow" width="16" height="16">
+                        <img src="../img/world.svg" alt="world" width="20" height="20">
+                        <span>Узбекский</span>
+                        <img src="../img/chevron-down.svg" alt="arrow" width="16" height="16">
                         <ul class="hamburger__lang-menu">
                             <li class="hamburger__lang-item">Русский</li>
                             <li class="hamburger__lang-item">English</li>
                         </ul>
                     </button>
                 </div>
-                <a href="#app" class="hamburger__join-btn">A'zo bo'lish</a>
+                <a href="#app" class="hamburger__join-btn">Стать членом</a>
             </div>
         </div>
     </div>
 
 
-    <section class="about">
-        <div class="about__container">
-            <img class="about__images" src="./img/about/about.png" loading="lazy" alt="news">
+    <section class="main">
+        <div class="main__container">
+        </div>
+    </section>
 
-            <h2 class="about__title">Ommaviy Axborot Vositalari biz haqimizda</h2>
-            <p class="about__description">O‘zbekistonda xalqaro buxgalteriya autsorsing xizmatlarini rivojlantirishga
-                qaratilgan yangi Uyushma ish
-                boshladi. Ushbu assotsiatsiya hisob-kitob, audit va moliyaviy konsalting yo‘nalishida faoliyat
-                yurituvchi mahalliy autsorsing kompaniyalarini birlashtirishni maqsad qiladi. <br> <br>
-                Uyushmaning asosiy vazifasi — O‘zbekistonda autsorsing xizmatlarini xalqaro standartlarga moslashtirish,
-                sohaga oid malaka, tajriba va metodikani bir markazda jamlashdir. Tashkilot a’zolari chet el bozorlariga
-                chiqish, jahon amaliyotlariga mos ishlash va professional sifatni oshirish uchun zarur
-                qo‘llab-quvvatlashni olishlari mumkin. <br> <br>
-                Hozirgi kunda uyushmaga 17 ta kompaniya a’zo bo‘ldi. Ta’sischi kompaniyalar qatoriga Turan OS, TA-VAT
-                Consulting, ATB.Consult va GrossBook kiradi. <br> <br>
-                Uyushma doirasida: <br> <br>
 
-            <ul class="about__description">
-                <li>professionallar o‘rtasida tajriba almashish,</li>
-                <li>trening va seminarlar tashkil etish,</li>
-                <li>davlat tashkilotlari bilan muloqot o‘rnatish,</li>
-                <li>autsorsing bozoriga oid muammolarni bartaraf etish,</li>
-                <li>a’zolar manfaatlarini himoya qilish</li>
-            </ul>
+    <section class="history">
+        <div class="history__container">
+            <div class="history__info">
+                <div class="history__item">
+                    <h3 class="history__item-title">История ассоциации</h3>
+                    <p class="history__item-description">Несмотря на опыт, мы увидели, что многим специалистам трудно
+                        найти поддержку, консультацию и своё сообщество. Именно эта потребность и объединила нас.</p>
+                    <br>
+                    <p class="history__item-description"> Группа преданных своему делу специалистов собралась вместе и
+                        создала закрытую Ассоциацию для обучения, обмена мнениями и взаимной поддержки. Так началась
+                        история нашего сообщества.</p>
+                </div>
+                <img class="history__info-images" src="../img/history/logo.png" loading="lazy" alt="history logo">
+            </div>
 
-            <br>
-            </p>
-            <p class="about__description" style="margin-bottom: 30px;"> kabi yo‘nalishlar bo‘yicha faoliyat yuritiladi. <br> <br>
-                Tashabbuskorlardan biri — Otamurod Sultanov: “Biz — raqibmiz, lekin bir-birimizga dushman emasmiz.
-                Bozorni birga rivojlantirishimiz kerak”, — deya fikr bildirgan.</p>
+            <div class="history__row">
+                <div class="history__col">
+                    <img class="history__images" src="../img/history/1.avif" loading="lazy" alt="history icons">
 
-            <h4 class="about__subtitle">Foydalanilgan manbalar</h4>
-            <p class="about__text">1. <a class="about__link" href="https://www.spot.uz/ru/2025/04/24/uyushma/">https://www.spot.uz/ru/2025/04/24/uyushma/</a></p>
-            <a class="about__btn" href="./index.html">
-                Asosiy sahifaga qaytish
-            </a>
+                    <h3 class="history__col-title">Прозрачность</h3>
+                    <p class="history__col-description">Мы ничего не скрываем. Всё открыто, ясно и понятно. Здесь
+                        работает команда надёжных профессионалов.</p>
+                </div>
+                <div class="history__col">
+                    <img class="history__images" src="../img/history/2.avif" loading="lazy" alt="history icons">
+
+                    <h3 class="history__col-title">Честность</h3>
+                    <p class="history__col-description">Для нас важна доверие. Если человек не остаётся один и
+                        развивается вместе с командой — значит, мы выполняем свою миссию.</p>
+                </div>
+                <div class="history__col">
+                    <img class="history__images" src="../img/history/3.avif" loading="lazy" alt="history icons">
+
+                    <h3 class="history__col-title">Развитие</h3>
+                    <p class="history__col-description">Вместе с нашими членами мы стремимся приобретать новые знания и
+                        всегда оставаться на шаг впереди.</p>
+                </div>
+                <div class="history__col">
+                    <img class="history__images" src="../img/history/4.avif" loading="lazy" alt="history icons">
+
+                    <h3 class="history__col-title">Защита</h3>
+                    <p class="history__col-description">Защита прав, труда и достоинства каждого члена — наша главная
+                        ответственность.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="users">
+        <div class="users__container">
+            <h3 class="users__title">Проекты наших членов ассоциации:</h3>
+            <div class="users__row">
+                <div class="users__col">
+                    <img class="users__images" src="../img/history/project1.png" loading="lazy" alt="img">
+                    <a class="users__link" href="https://www.turanos.uz/ru">Turan Os</a>
+                </div>
+                <div class="users__col">
+                    <img class="users__images" src="../img/history/project2.avif" loading="lazy" alt="img">
+                    <a class="users__link" href="https://atb-accounting.uz/">ATB Accounting Consult</a>
+                </div>
+                <div class="users__col">
+                    <img class="users__images" src="../img/history/project3.avif" loading="lazy" alt="img">
+                    <a class="users__link" href="https://tavat.uz/">TA-VAT consulting </a>
+                </div>
+                <div class="users__col">
+                    <img class="users__images" src="../img/history/project4.png" loading="lazy" alt="img">
+                    <a class="users__link" href="https://grossbook.uz/">Grossbook</a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -165,31 +208,31 @@
         <div class="footer__container">
             <div class="footer__brand">
                 <a class="footer__logo-link" href="#">
-                    <img class="footer__logo" src="./img/footlogo.avif" alt="logo" width="163" height="50"
+                    <img class="footer__logo" src="../img/footlogo.avif" alt="logo" width="163" height="50"
                         loading="lazy">
                 </a>
                 <ul class="footer__social-list">
                     <li class="footer__social-item">
                         <a class="footer__social-link" target="_blank" href="#">
-                            <img class="footer__social-icon" src="./img/footer/telegram.svg" alt="social media icon"
+                            <img class="footer__social-icon" src="../img/footer/telegram.svg" alt="social media icon"
                                 width="32" height="32" loading="lazy">
                         </a>
                     </li>
                     <li class="footer__social-item">
                         <a class="footer__social-link" target="_blank" href="#">
-                            <img class="footer__social-icon" src="./img/footer/instagram.svg" alt="social media icon"
+                            <img class="footer__social-icon" src="../img/footer/instagram.svg" alt="social media icon"
                                 width="32" height="32" loading="lazy">
                         </a>
                     </li>
                     <li class="footer__social-item">
                         <a class="footer__social-link" target="_blank" href="#">
-                            <img class="footer__social-icon" src="./img/footer/youtube.svg" alt="social media icon"
+                            <img class="footer__social-icon" src="../img/footer/youtube.svg" alt="social media icon"
                                 width="32" height="32" loading="lazy">
                         </a>
                     </li>
                     <li class="footer__social-item">
                         <a class="footer__social-link" target="_blank" href="#">
-                            <img class="footer__social-icon" src="./img/footer/facebook.svg" alt="social media icon"
+                            <img class="footer__social-icon" src="../img/footer/facebook.svg" alt="social media icon"
                                 width="32" height="32" loading="lazy">
                         </a>
                     </li>
@@ -198,16 +241,16 @@
             <div class="footer__content">
                 <div class="footer__links">
                     <ul class="footer__links-list">
-                        <li class="footer__links-item"><a class="footer__link" href="#goal">Assotsiatsiya haqida</a>
+                        <li class="footer__links-item"><a class="footer__link" href="#goal">Об ассоциации</a>
                         </li>
-                        <li class="footer__links-item"><a class="footer__link" href="#management">Kengash</a></li>
-                        <li class="footer__links-item"><a class="footer__link" href="#benefits">Azo’lar va
-                                Imtiyozlar</a></li>
-                        <li class="footer__links-item"><a class="footer__link" href="#news">Yangiliklar</a></li>
+                        <li class="footer__links-item"><a class="footer__link" href="#management">Совет</a></li>
+                        <li class="footer__links-item"><a class="footer__link" href="#benefits">Члены и привилегии</a>
+                        </li>
+                        <li class="footer__links-item"><a class="footer__link" href="#news">Новости</a></li>
                     </ul>
 
-                    <p class="footer__description">Buxgalteriya autsorsing kompaniyalarini bir joyga to‘plab,
-                        professional va ishonchli tizim yaratadigan uyushma.</p>
+                    <p class="footer__description">Ассоциация, объединяющая бухгалтерские аутсорсинговые компании и
+                        создающая профессиональную и надежную систему.</p>
                 </div>
                 <div class="footer__contact">
                     <ul class="footer__contact-list">
@@ -224,7 +267,7 @@
                                             stroke-linejoin="round" />
                                     </svg>
                                 </span>
-                                Toshkent shahri Chilonzor tumani “ц” kvartal 7/1 
+                                Город Ташкент, Чиланзарский район, квартал «Ц», дом 7/1
                             </a>
                         </li>
                         <li class="footer__contact-item">
@@ -245,15 +288,14 @@
                 </div>
             </div>
             <div class="footer__bottom">
-                <p class="footer__copyright">2025. Barcha huquqlar himoyalangan</p>
+                <p class="footer__copyright">2025. Все права защищены</p>
             </div>
         </div>
     </footer>
-
-    <script defer src="./js/app.js"></script>
-    <script defer src="./js/ariza.js"></script>
-    <script defer src="./js/modal.js"></script>
-    <script defer src="./js/question.js"></script>
+    <script defer src="../js/app.js"></script>
+    <script defer src="../js/ariza.js"></script>
+    <script defer src="../js/modal.js"></script>
+    <script defer src="../js/question.js"></script>
 </body>
 
 </html>

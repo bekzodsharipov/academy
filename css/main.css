@@ -1221,12 +1221,11 @@ button {
 
 .news-filter__item {
     padding: 10px 16px 11px 16px;
-
     font-weight: 500;
     font-size: 20px;
     line-height: 130%;
     color: #000000;
-
+    cursor: pointer;
     background-color: #ffffff;
     border-top: 0.5px solid #E4E4EC;
 }
@@ -2620,7 +2619,7 @@ img {
     }
 
     .goal__img {
-        left: 235px;
+        left: 128px;
         width: 135px;
     }
 
@@ -2715,9 +2714,23 @@ img {
         font-size: 14px;
     }
 
+    .news__boxss {
+        flex-direction: column;
+        align-items: start;
+        gap: 20px;
+    }
+
+    .news__titles {
+        font-size: 50px;
+    }
 }
 
+
 @media (max-width: 480px) {
+    .news__titles {
+        font-size: 45px;
+    }
+
     .management__member-image {
         width: 240px;
         border-radius: 20px;
@@ -2851,7 +2864,7 @@ img {
     }
 
     .goal__img {
-        left: 5px;
+        left: 10px;
         top: 60px;
         width: 135px;
     }
@@ -2866,5 +2879,9 @@ img {
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    .news__titles {
+        font-size: 40px;
     }
 }
