@@ -644,7 +644,7 @@ button {
     font-size: 18px;
     font-weight: 500;
     line-height: 130%;
-    padding: 22px 100px;
+    padding: 22px clamp(90px, 8vw, 100px);
     background: linear-gradient(102.54deg, #09090b 45.59%, #5c5c71 118.14%);
     box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.14);
     border-radius: 14px;
@@ -1214,10 +1214,22 @@ button {
 }
 
 .news-filter__body {
-    display: none;
+    display: flex;
     flex-direction: column;
     background-color: #ffffff;
+
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.25s ease, opacity 0.2s ease;
 }
+
+/* Ochiq holat */
+.news-filter.is-open .news-filter__body {
+    max-height: 200px;
+    opacity: 1;
+}
+
 
 .news-filter__item {
     padding: 10px 16px 11px 16px;
@@ -1265,8 +1277,6 @@ button {
 .dropdown-item:hover {
     background: #E5E7F0;
 }
-
-
 
 
 .news__list {
@@ -2873,7 +2883,7 @@ img {
 
 @media (max-width:355px) {
     .goal__button {
-        padding: 22px 80px;
+        padding: 22px 50px;
         width: 100%;
         text-align: center;
         display: flex;

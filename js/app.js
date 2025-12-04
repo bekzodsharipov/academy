@@ -292,17 +292,29 @@ function initListAccordions () {
 // =========================
 // 6. NEWS FILTER
 // =========================
-
 function initNewsFilter () {
   const filter = document.querySelector('.news-filter')
   if (!filter) return
 
   const head = filter.querySelector('.news-filter__head')
+  const body = filter.querySelector('.news-filter__body')
   const items = filter.querySelectorAll('.news-filter__item')
-  if (!head || !items.length) return
+  if (!head || !body || !items.length) return
+
+  filter.style.position = 'relative'
+  filter.style.overflow = 'visible' 
+
+  body.style.position = 'absolute'
+  body.style.top = '100%'
+  body.style.left = '0'
+  body.style.right = '0'
+
+  filter.classList.remove('is-open')
+  head.classList.remove('open')
 
   head.addEventListener('click', () => {
-    filter.classList.toggle('open')
+    const isOpen = filter.classList.toggle('is-open')
+    head.classList.toggle('open', isOpen)
   })
 
   items.forEach(item => {
@@ -315,10 +327,12 @@ function initNewsFilter () {
         span.textContent = item.textContent.trim()
       }
 
-      filter.classList.remove('open')
+      filter.classList.remove('is-open')
+      head.classList.remove('open')
     })
   })
 }
+
 
 // =========================
 // 7. SWIPER INIT
